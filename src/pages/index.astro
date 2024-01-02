@@ -5,22 +5,33 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Carmen Caballero Medina">
   <main class="w-full">
-    <header class="flex justify-end mr-[-5px]">
-      <TitleName title="about" />
-    </header>
+    <TitleName title="about" />
     <section class="w-[62rem] flex items-center mx-auto mt-20 gap-20">
       <div class="w-80 h-80 rounded-full bg-gray-300"></div>
-      <article class="w-1/2">
+      <article class="w-1/2 font-light">
+        <p class="mb-5">
+          My name is Carmen. I'm a <span class="font-bol text-gradient-custom"
+            >Graphic designer</span
+          > and illustrator who loves to create cute and visual atractive
+          things. I like to work hard in order to deliver clean and high quality
+          results that are up to the challenge of challenging projects.
+        </p>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipiscing elit quam magna,
-          platea cum malesuada pellentesque orci neque senectus rhoncus sodales,
-          potenti etiam class nostra eu eget nibh cubilia. Dignissim at varius
-          cubilia sapien duis ad inceptos blandit in, netus porttitor hac diam
-          aliquam eleifend nisi. Ante bibendum libero tellus egestas
-          pellentesque praesent neque ornare mattis ac penatibus, proin orci
-          fusce non etiam nulla mi quisque vestibulum
+          I enjoy reading and swimming to let off steam in my days off. Taking
+          photos of everything is my vibe, is there anything better than being
+          able to remember beautiful moments just watching some pics?
         </p>
       </article>
     </section>
   </main>
 </Layout>
+
+<style>
+  .text-gradient-custom {
+    background-image: radial-gradient(circle, #d2ffa7, #39db2e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 800;
+  }
+</style>
