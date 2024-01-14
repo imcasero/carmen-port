@@ -1,10 +1,15 @@
 ---
+import List from "../../components/List.astro";
 import TitleName from "../../components/TitleName.astro";
 import Layout from "../../layouts/Layout.astro";
+import { experienceData, educationData, otherData } from "../../data";
 ---
 
 <Layout title="Carmen Caballero Medina">
-  <main>
+  <main class="mb-32">
     <TitleName title="career" />
+    <List title="Work experience" data={experienceData} />
+    <List title="Estudies" data={educationData} />
+    <List title="Others" data={otherData} />
   </main>
 </Layout>
