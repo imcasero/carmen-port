@@ -50,6 +50,16 @@ Uses Biome (biome.json) for both linting and formatting:
 - VCS integration enabled (respects .gitignore)
 - Formatter configured with tabs and double quotes
 
+### Git Hooks
+
+Pre-commit hooks are configured using simple-git-hooks + lint-staged:
+- **simple-git-hooks**: Lightweight alternative to Husky for managing git hooks
+- **lint-staged**: Runs Biome only on staged files (faster commits)
+- Pre-commit hook runs `biome check --write` on staged files
+- Commit will be blocked if linting/formatting errors cannot be auto-fixed
+- To skip hooks temporarily: `SKIP_SIMPLE_GIT_HOOKS=1 git commit`
+- Hooks are installed automatically via `prepare` script on `pnpm install`
+
 ### React Compiler
 
 The React Compiler is enabled in vite.config.ts via Babel plugin. This provides automatic memoization and optimization but may impact dev/build performance. The compiler analyzes components and hooks to optimize re-renders without manual React.memo or useMemo.
