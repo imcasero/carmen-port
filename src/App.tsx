@@ -1,9 +1,10 @@
+import { Home } from "./components/Home/Home";
+
 function App() {
 	return (
-		<>
-			<h1>Carmen</h1>
-			<p>Portfolio</p>
-		</>
+		<main className="w-full h-screen flex items-center justify-center">
+			<Home />
+		</main>
 	);
 }
 
