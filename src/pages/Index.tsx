@@ -16,7 +16,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="py-8 text-center">
         <p className="font-mono text-[10px] tracking-widest uppercase text-muted-foreground">
-          © 2024 Carmen — Diseñado con ♡
+          Designed by <a className="hover:text-white transition-colors" href="https://www.linkedin.com/in/carmencaballeromedina/">Carmen Caballero Medina</a> and Develop by <a className="hover:text-white transition-colors" href="https://imcasero.dev">@imcasero.dev</a>
         </p>
       </footer>
     </div>
