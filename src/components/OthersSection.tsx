@@ -2,12 +2,12 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 const otherItems = [
-  { id: 1, rotate: -6, top: "4%", left: "5%", width: 240, height: 300, label: "Ilustración 1", desc: "Exploración de formas orgánicas y color en acuarela digital." },
-  { id: 2, rotate: 5, top: "2%", left: "38%", width: 280, height: 210, label: "Fotografía 1", desc: "Serie de retratos analógicos en blanco y negro, Madrid 2023." },
-  { id: 3, rotate: -3, top: "6%", left: "72%", width: 220, height: 280, label: "Ilustración 2", desc: "Cartel para festival de música independiente en formato A2." },
-  { id: 4, rotate: 7, top: "52%", left: "3%", width: 260, height: 195, label: "Fotografía 2", desc: "Fotografía de producto para marca de cerámica artesanal." },
-  { id: 5, rotate: -4, top: "48%", left: "40%", width: 230, height: 310, label: "Ilustración 3", desc: "Portada de fanzine autopublicado, técnica mixta collage." },
-  { id: 6, rotate: 3, top: "55%", left: "74%", width: 200, height: 260, label: "Fotografía 3", desc: "Documentación visual de un viaje por el sur de Portugal." },
+  { id: 1, rotate: -6, top: "4%", left: "5%", width: 240, height: 300, label: "Ilustración", desc: "Exploración tipográfica y composición de formas geométricas para uso editorial." },
+  { id: 2, rotate: 5, top: "2%", left: "38%", width: 280, height: 210, label: "Fotografía", desc: "Capturas del día a día — objetos, texturas y luz natural. Toledo, Madrid, Barcelona." },
+  { id: 3, rotate: -3, top: "6%", left: "72%", width: 220, height: 280, label: "Editorial", desc: "Diseño de publicación y maquetación. Trabajo con InDesign y grilla tipográfica." },
+  { id: 4, rotate: 7, top: "52%", left: "3%", width: 260, height: 195, label: "Motion", desc: "Piezas de contenido animado para redes sociales. Edición en CapCut y After Effects." },
+  { id: 5, rotate: -4, top: "48%", left: "40%", width: 230, height: 310, label: "Collage", desc: "Collage analógico y digital. Recortes, capas y texturas combinadas manualmente." },
+  { id: 6, rotate: 3, top: "55%", left: "74%", width: 200, height: 260, label: "Sketchbook", desc: "Bocetos y experimentos visuales de proceso creativo. Ideas en crudo." },
 ];
 
 const FlipCard = ({ item, index }: { item: typeof otherItems[0]; index: number }) => {

@@ -36,23 +36,23 @@ const ContactSection = () => {
             <div className="space-y-4 border-t border-dashed border-muted-foreground/20 pt-5">
               <div className="flex justify-between">
                 <div>
-                  <p className="font-mono text-[9px] tracking-widest uppercase text-muted-foreground/60">Email</p>
-                  <p className="font-body text-sm text-card-foreground">carmen@email.com</p>
+                  <p className="font-mono text-[9px] tracking-widest uppercase text-muted-foreground/60">Contacto</p>
+                  <p className="font-body text-sm text-card-foreground">Disponible por LinkedIn</p>
                 </div>
                 <div className="text-right">
-                  <p className="font-mono text-[9px] tracking-widest uppercase text-muted-foreground/60">Tel</p>
-                  <p className="font-body text-sm text-card-foreground">+34 600 000 000</p>
+                  <p className="font-mono text-[9px] tracking-widest uppercase text-muted-foreground/60">Ubicación</p>
+                  <p className="font-body text-sm text-card-foreground">España</p>
                 </div>
               </div>
 
               <div className="flex justify-between">
                 <div>
                   <p className="font-mono text-[9px] tracking-widest uppercase text-muted-foreground/60">LinkedIn</p>
-                  <p className="font-body text-sm text-card-foreground">linkedin.com/in/carmen</p>
+                  <p className="font-body text-sm text-card-foreground">carmencaballeromedina</p>
                 </div>
                 <div className="text-right">
-                  <p className="font-mono text-[9px] tracking-widest uppercase text-muted-foreground/60">Web</p>
-                  <p className="font-body text-sm text-card-foreground">carmen.design</p>
+                  <p className="font-mono text-[9px] tracking-widest uppercase text-muted-foreground/60">Herramientas</p>
+                  <p className="font-body text-sm text-card-foreground">Ai · Ps · Id</p>
                 </div>
               </div>
             </div>
@@ -72,7 +72,7 @@ const ContactSection = () => {
                 ))}
               </div>
               <p className="font-mono text-[8px] text-center mt-2 text-muted-foreground/40">
-                CARMEN-DESIGN-2024
+                CARMEN-CABALLERO-MEDINA
               </p>
             </div>
           </div>
@@ -107,7 +107,7 @@ const ContactSection = () => {
               <div className="space-y-4 flex-1">
                 <div>
                   <p className="font-mono text-[9px] tracking-widest uppercase text-muted-foreground/60">Nombre</p>
-                  <p className="font-display text-lg font-bold text-card-foreground">Carmen Apellido</p>
+                  <p className="font-display text-lg font-bold text-card-foreground">Carmen Caballero</p>
                 </div>
                 <div>
                   <p className="font-mono text-[9px] tracking-widest uppercase text-muted-foreground/60">Nacionalidad</p>
@@ -124,17 +124,18 @@ const ContactSection = () => {
             <div className="px-7 pb-7">
               <p className="font-mono text-[9px] tracking-widest uppercase text-muted-foreground/60 mb-3">About me</p>
               <p className="font-body text-sm leading-relaxed text-card-foreground/80">
-                Diseñadora gráfica con pasión por el branding, la identidad visual y la dirección de arte. 
-                Amante de lo analógico, los viajes y la fotografía. Siempre buscando nuevas formas de contar historias a través del diseño.
+                Diseñadora gráfica con base en Adobe Suite y experiencia en branding,
+                identidad visual y contenido digital. Formada en la Escuela de Arte de Toledo.
+                Actualmente en iO.GENIX, con interés creciente en UX e IA creativa.
               </p>
 
               {/* Stamps */}
               <div className="flex gap-5 mt-5 justify-end">
                 <div className="stamp rotate-[-12deg]">
-                  Madrid
+                  Toledo
                 </div>
                 <div className="stamp rotate-[8deg] border-muted-foreground/40 text-muted-foreground/60">
-                  2024
+                  
                 </div>
               </div>
             </div>

@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
 
 const workItems = [
-  { id: 1, rotate: -5, top: "5%", left: "5%", width: "28%", aspectRatio: "4/3", label: "Proyecto 1" },
-  { id: 2, rotate: 7, top: "0%", left: "38%", width: "26%", aspectRatio: "3/4", label: "Proyecto 2" },
-  { id: 3, rotate: -3, top: "2%", left: "68%", width: "30%", aspectRatio: "16/9", label: "Proyecto 3" },
-  { id: 4, rotate: 5, top: "45%", left: "8%", width: "24%", aspectRatio: "1/1", label: "Proyecto 4" },
-  { id: 5, rotate: -8, top: "42%", left: "35%", width: "32%", aspectRatio: "3/2", label: "Proyecto 5" },
-  { id: 6, rotate: 4, top: "38%", left: "72%", width: "26%", aspectRatio: "4/5", label: "Proyecto 6" },
+  { id: 1, rotate: -5, top: "5%", left: "5%", width: "28%", aspectRatio: "4/3", label: "Branding" },
+  { id: 2, rotate: 7, top: "0%", left: "38%", width: "26%", aspectRatio: "3/4", label: "Identidad Visual" },
+  { id: 3, rotate: -3, top: "2%", left: "68%", width: "30%", aspectRatio: "16/9", label: "Editorial" },
+  { id: 4, rotate: 5, top: "45%", left: "8%", width: "24%", aspectRatio: "1/1", label: "Packaging" },
+  { id: 5, rotate: -8, top: "42%", left: "35%", width: "32%", aspectRatio: "3/2", label: "Contenido Digital" },
+  { id: 6, rotate: 4, top: "38%", left: "72%", width: "26%", aspectRatio: "4/5", label: "Redes Sociales" },
 ];
 
 const WorkSection = () => {
@@ -30,16 +30,20 @@ const WorkSection = () => {
               </h3>
               <div className="space-y-4">
                 <div className="border-l-2 border-accent pl-4">
-                  <p className="font-body text-base md:text-lg text-foreground">Diseñadora Senior — Studio Name</p>
-                  <p className="font-mono text-sm text-muted-foreground mt-1">2022 — Presente</p>
+                  <p className="font-body text-base md:text-lg text-foreground">Diseñadora Gráfica — iO.GENIX</p>
+                  <p className="font-mono text-sm text-muted-foreground mt-1">Abr 2024 — Presente</p>
                 </div>
                 <div className="border-l-2 border-muted pl-4">
-                  <p className="font-body text-base md:text-lg text-foreground">Diseñadora Gráfica — Agency Name</p>
-                  <p className="font-mono text-sm text-muted-foreground mt-1">2020 — 2022</p>
+                  <p className="font-body text-base md:text-lg text-foreground">Marketing — MotorOk.com</p>
+                  <p className="font-mono text-sm text-muted-foreground mt-1">May 2022 — Jul 2023</p>
                 </div>
                 <div className="border-l-2 border-muted pl-4">
-                  <p className="font-body text-base md:text-lg text-foreground">Junior Designer — Company Name</p>
-                  <p className="font-mono text-sm text-muted-foreground mt-1">2018 — 2020</p>
+                  <p className="font-body text-base md:text-lg text-foreground">Diseñadora Gráfica — Freelance</p>
+                  <p className="font-mono text-sm text-muted-foreground mt-1">Sep – Dic 2021</p>
+                </div>
+                <div className="border-l-2 border-muted pl-4">
+                  <p className="font-body text-base md:text-lg text-foreground">Diseñadora Gráfica — Maktagg</p>
+                  <p className="font-mono text-sm text-muted-foreground mt-1">Jun – Jul 2021</p>
                 </div>
               </div>
             </div>
@@ -49,9 +53,9 @@ const WorkSection = () => {
                 Descripción
               </h3>
               <p className="font-body text-base md:text-lg leading-relaxed text-foreground/80">
-                Carmen es una diseñadora gráfica apasionada por la identidad visual, 
-                el branding y la dirección de arte. Su trabajo combina lo analógico con 
-                lo digital, creando piezas que cuentan historias.
+                Diseñadora gráfica con base técnica en Adobe Suite y ~3 años de experiencia
+                en branding, identidad visual y contenido digital. Formada en CFGS Diseño
+                Gráfico (Escuela de Arte de Toledo). Interés creciente en UX y flujos creativos con IA.
               </p>
             </div>
           </div>
