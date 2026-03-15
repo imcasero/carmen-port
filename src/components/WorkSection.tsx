@@ -1,12 +1,19 @@
 import { motion } from "framer-motion";
 
+import imgBannerGymbro from "@/assets/projects/banners/banner-gymbro-pack.png";
+import imgStoryHydracherry from "@/assets/projects/stories/story-hydracherry.png";
+import imgYoutubAndroblast from "@/assets/projects/youtube/youtube-thumbnail-androblast.png";
+import imgSocialBars from "@/assets/projects/social/social-post-bars.png";
+import imgNewsletterIntra from "@/assets/projects/newsletters/newsletter-intrawork-promo.png";
+import imgStoryAloe from "@/assets/projects/stories/story-aloe-launch.png";
+
 const workItems = [
-  { id: 1, rotate: -5, top: "5%", left: "5%", width: "28%", aspectRatio: "4/3", label: "Branding" },
-  { id: 2, rotate: 7, top: "0%", left: "38%", width: "26%", aspectRatio: "3/4", label: "Identidad Visual" },
-  { id: 3, rotate: -3, top: "2%", left: "68%", width: "30%", aspectRatio: "16/9", label: "Editorial" },
-  { id: 4, rotate: 5, top: "45%", left: "8%", width: "24%", aspectRatio: "1/1", label: "Packaging" },
-  { id: 5, rotate: -8, top: "42%", left: "35%", width: "32%", aspectRatio: "3/2", label: "Contenido Digital" },
-  { id: 6, rotate: 4, top: "38%", left: "72%", width: "26%", aspectRatio: "4/5", label: "Redes Sociales" },
+  { id: 1, rotate: -5, top: "5%", left: "5%", width: "45%", aspectRatio: "3002/1100", label: "GymBro Pack · Banner", img: imgBannerGymbro },
+  { id: 2, rotate: 14, top: "0%", left: "38%", width: "30%", aspectRatio: "1080/1920", label: "HydraCherry · Story", img: imgStoryHydracherry },
+  { id: 3, rotate: -3, top: "2%", left: "68%", width: "30%", aspectRatio: "1920/1080", label: "Androblast · YouTube", img: imgYoutubAndroblast },
+  { id: 4, rotate: 5, top: "45%", left: "8%", width: "30%", aspectRatio: "1080/1080", label: "Barritas · Post Social", img: imgSocialBars },
+  { id: 5, rotate: -8, top: "55%", left: "35%", width: "32%", aspectRatio: "1080/1350", label: "IntraWork · Newsletter", img: imgNewsletterIntra },
+  { id: 6, rotate: 4, top: "38%", left: "72%", width: "26%", aspectRatio: "816/1456", label: "Aloe Vera · Story", img: imgStoryAloe },
 ];
 
 const WorkSection = () => {
@@ -79,10 +86,14 @@ const WorkSection = () => {
               }}
             >
               <div
-                className="w-full h-auto bg-muted/50 flex items-center justify-center overflow-hidden"
+                className="w-full overflow-hidden"
                 style={{ aspectRatio: item.aspectRatio }}
               >
-                <span className="font-mono text-xs text-muted-foreground">{item.label}</span>
+                <img
+                  src={item.img}
+                  alt={item.label}
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="p-3">
                 <p className="font-mono text-[10px] text-card-foreground/60">{item.label}</p>
@@ -103,8 +114,12 @@ const WorkSection = () => {
               className="postcard mx-auto max-w-sm"
               style={{ rotate: `${item.rotate}deg` }}
             >
-              <div className="w-full h-auto bg-muted/50 flex items-center justify-center aspect-[4/3] overflow-hidden">
-                <span className="font-mono text-xs text-muted-foreground">{item.label}</span>
+              <div className="w-full overflow-hidden" style={{ aspectRatio: item.aspectRatio }}>
+                <img
+                  src={item.img}
+                  alt={item.label}
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="p-3">
                 <p className="font-mono text-[10px] text-card-foreground/60">{item.label}</p>
