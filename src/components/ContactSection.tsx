@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const ContactSection = () => {
   return (
     <section id="contact" className="min-h-screen py-24 px-6 md:px-16 flex items-center justify-center">
-      <div className="relative w-full max-w-4xl mx-auto">
+      <div className="relative w-full max-w-4xl mx-auto min-h-[700px] md:min-h-[600px]">
         
         {/* Boarding Pass - behind, offset */}
         <motion.div
@@ -11,7 +11,14 @@ const ContactSection = () => {
           whileInView={{ opacity: 1, x: 0, rotate: 5 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.15 }}
-          className="boarding-pass w-[360px] md:w-[480px] rounded-lg overflow-hidden absolute right-0 md:right-[5%] top-[55%] md:top-[30%] z-0"
+          whileHover={{ 
+            x: 80, 
+            rotate: 12, 
+            scale: 1.02,
+            zIndex: 20,
+            transition: { duration: 0.4, ease: "easeOut" }
+          }}
+          className="boarding-pass w-[360px] md:w-[480px] rounded-lg overflow-hidden absolute right-0 md:right-[2%] top-[50%] md:top-[15%] z-0 cursor-pointer"
         >
           {/* Header */}
           <div className="bg-accent/10 px-6 py-4 border-b border-dashed border-muted-foreground/20">
@@ -84,7 +91,14 @@ const ContactSection = () => {
           whileInView={{ opacity: 1, x: 0, rotate: -5 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="passport-cover w-[340px] md:w-[420px] p-1 relative z-10"
+          whileHover={{ 
+            x: -60, 
+            rotate: -12, 
+            scale: 1.02,
+            zIndex: 30,
+            transition: { duration: 0.4, ease: "easeOut" }
+          }}
+          className="passport-cover w-[340px] md:w-[420px] p-1 relative z-10 cursor-pointer"
         >
           {/* Cover */}
           <div className="text-center py-10">
