@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import imgZma from "@/assets/projects/social/social-post-zma.png";
 import imgLavender from "@/assets/projects/stories/story-lavender.png";
@@ -22,16 +23,17 @@ type OtherItem = {
 };
 
 const otherItems: OtherItem[] = [
-  { id: 1, rotate: -5, top: "1%",  left: "5%",  width: 340, aspectRatio: "1080/1080", label: "Ilustración", desc: "Exploración tipográfica y composición de formas geométricas para uso editorial.", img: imgZma },
-  { id: 2, rotate: 6,  top: "0%",  left: "30%", width: 255, aspectRatio: "1080/1920", label: "Fotografía",  desc: "Capturas del día a día — objetos, texturas y luz natural. Toledo, Madrid, Barcelona.", img: imgLavender },
-  { id: 3, rotate: -3, top: "4%",  left: "63%", width: 310, aspectRatio: "1080/1350", label: "Editorial",   desc: "Diseño de publicación y maquetación. Trabajo con InDesign y grilla tipográfica.", img: imgBbqNewsletter },
-  { id: 4, rotate: 8,  top: "48%", left: "7%",  width: 255, aspectRatio: "1080/1920", label: "Motion",      desc: "Piezas de contenido animado para redes sociales. Edición en CapCut y After Effects.", video: videoBallsSpace },
-  { id: 5, rotate: -5, top: "46%", left: "39%", width: 255, aspectRatio: "816/1456",  label: "Collage",     desc: "Collage analógico y digital. Recortes, capas y texturas combinadas manualmente.", img: imgAquaLaunch },
-  { id: 6, rotate: 4,  top: "49%", left: "69%", width: 320, aspectRatio: "1080/1080", label: "Sketchbook",  desc: "Bocetos y experimentos visuales de proceso creativo. Ideas en crudo.", img: imgSocialGeneric },
+  { id: 1, rotate: -5, top: "1%", left: "5%", width: 340, aspectRatio: "1080/1080", label: "others.items.illustration.label", desc: "others.items.illustration.desc", img: imgZma },
+  { id: 2, rotate: 6, top: "0%", left: "30%", width: 255, aspectRatio: "1080/1920", label: "others.items.photo.label", desc: "others.items.photo.desc", img: imgLavender },
+  { id: 3, rotate: -3, top: "4%", left: "63%", width: 310, aspectRatio: "1080/1350", label: "others.items.editorial.label", desc: "others.items.editorial.desc", img: imgBbqNewsletter },
+  { id: 4, rotate: 8, top: "48%", left: "7%", width: 255, aspectRatio: "1080/1920", label: "others.items.motion.label", desc: "others.items.motion.desc", video: videoBallsSpace },
+  { id: 5, rotate: -5, top: "46%", left: "39%", width: 255, aspectRatio: "816/1456", label: "others.items.collage.label", desc: "others.items.collage.desc", img: imgAquaLaunch },
+  { id: 6, rotate: 4, top: "49%", left: "69%", width: 320, aspectRatio: "1080/1080", label: "others.items.sketchbook.label", desc: "others.items.sketchbook.desc", img: imgSocialGeneric },
 ];
 
 const FlipCard = ({ item, index }: { item: OtherItem; index: number }) => {
   const [isFlipped, setIsFlipped] = useState(false);
+  const { t } = useTranslation();
 
   return (
     <motion.div
@@ -74,7 +76,7 @@ const FlipCard = ({ item, index }: { item: OtherItem; index: number }) => {
               className="w-full h-full object-cover"
             />
           ) : (
-            <img src={item.img} alt={item.label} className="w-full h-full object-cover" />
+            <img src={item.img} alt={t(item.label)} className="w-full h-full object-cover" />
           )}
         </div>
 
@@ -89,10 +91,10 @@ const FlipCard = ({ item, index }: { item: OtherItem; index: number }) => {
           }}
         >
           <p className="font-display text-lg font-bold text-center mb-4" style={{ color: "hsl(0 0% 15%)" }}>
-            {item.label}
+            {t(item.label)}
           </p>
           <p className="font-body text-sm leading-relaxed text-center" style={{ color: "hsl(0 0% 30%)" }}>
-            {item.desc}
+            {t(item.desc)}
           </p>
         </div>
       </motion.div>
@@ -101,6 +103,8 @@ const FlipCard = ({ item, index }: { item: OtherItem; index: number }) => {
 };
 
 const OthersSection = () => {
+  const { t } = useTranslation();
+
   return (
     <section id="others" className="min-h-screen py-24 px-6 md:px-16">
       <div className="max-w-7xl mx-auto">
@@ -110,9 +114,9 @@ const OthersSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="section-title text-foreground mb-2">Otros.</h2>
+          <h2 className="section-title text-foreground mb-2">{t("others.title")}</h2>
           <p className="font-mono text-xs tracking-widest uppercase text-muted-foreground mb-16">
-            Ilustraciones · Fotografía · For fun
+            {t("others.subtitle")}
           </p>
         </motion.div>
 
@@ -130,7 +134,7 @@ const OthersSection = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="stamp absolute top-[44%] left-[26%]"
           >
-            MADRID
+            {t("others.items.stampMadrid")}
           </motion.div>
 
           <motion.div
@@ -158,11 +162,11 @@ const OthersSection = () => {
                 {item.video ? (
                   <video src={item.video} autoPlay loop muted playsInline className="w-full h-full object-cover" />
                 ) : (
-                  <img src={item.img} alt={item.label} className="w-full h-full object-cover" />
+                  <img src={item.img} alt={t(item.label)} className="w-full h-full object-cover" />
                 )}
               </div>
               <p className="font-body text-[9px] text-center pt-1 pb-1" style={{ color: "hsl(0 0% 40%)" }}>
-                {item.desc}
+                {t(item.desc)}
               </p>
             </motion.div>
           ))}

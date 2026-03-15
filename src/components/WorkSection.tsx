@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 import imgBannerGymbro from "@/assets/projects/banners/banner-gymbro-pack.png";
 import imgStoryHydracherry from "@/assets/projects/stories/story-hydracherry.png";
@@ -17,6 +18,8 @@ const workItems = [
 ];
 
 const WorkSection = () => {
+  const { t } = useTranslation();
+
   return (
     <section id="work" className="min-h-screen relative py-24 px-6 md:px-12 lg:px-16">
       <div className="max-w-[1600px] mx-auto flex flex-col lg:flex-row gap-8 lg:gap-8 min-h-[800px]">
@@ -28,41 +31,39 @@ const WorkSection = () => {
           transition={{ duration: 0.7 }}
           className="lg:w-[32%] xl:w-[30%] relative z-10 flex-shrink-0 flex flex-col justify-center"
         >
-          <h2 className="font-display text-4xl md:text-5xl xl:text-6xl font-black italic text-foreground mb-10">Trabajos.</h2>
+          <h2 className="font-display text-4xl md:text-5xl xl:text-6xl font-black italic text-foreground mb-10">{t("work.title")}</h2>
 
           <div className="space-y-8">
             <div>
               <h3 className="font-mono text-sm tracking-widest uppercase text-muted-foreground mb-4">
-                Experiencia
+                {t("work.experience")}
               </h3>
               <div className="space-y-4">
                 <div className="border-l-2 border-accent pl-4">
-                  <p className="font-body text-base md:text-lg text-foreground">Diseñadora Gráfica — iO.GENIX</p>
-                  <p className="font-mono text-sm text-muted-foreground mt-1">Abr 2024 — Presente</p>
+                  <p className="font-body text-base md:text-lg text-foreground">{t("work.roles.ioGenix")}</p>
+                  <p className="font-mono text-sm text-muted-foreground mt-1">{t("work.dates.ioGenix")}</p>
                 </div>
                 <div className="border-l-2 border-muted pl-4">
-                  <p className="font-body text-base md:text-lg text-foreground">Marketing — MotorOk.com</p>
-                  <p className="font-mono text-sm text-muted-foreground mt-1">May 2022 — Jul 2023</p>
+                  <p className="font-body text-base md:text-lg text-foreground">{t("work.roles.motorOk")}</p>
+                  <p className="font-mono text-sm text-muted-foreground mt-1">{t("work.dates.motorOk")}</p>
                 </div>
                 <div className="border-l-2 border-muted pl-4">
-                  <p className="font-body text-base md:text-lg text-foreground">Diseñadora Gráfica — Freelance</p>
-                  <p className="font-mono text-sm text-muted-foreground mt-1">Sep – Dic 2021</p>
+                  <p className="font-body text-base md:text-lg text-foreground">{t("work.roles.freelance")}</p>
+                  <p className="font-mono text-sm text-muted-foreground mt-1">{t("work.dates.freelance")}</p>
                 </div>
                 <div className="border-l-2 border-muted pl-4">
-                  <p className="font-body text-base md:text-lg text-foreground">Diseñadora Gráfica — Maktagg</p>
-                  <p className="font-mono text-sm text-muted-foreground mt-1">Jun – Jul 2021</p>
+                  <p className="font-body text-base md:text-lg text-foreground">{t("work.roles.maktagg")}</p>
+                  <p className="font-mono text-sm text-muted-foreground mt-1">{t("work.dates.maktagg")}</p>
                 </div>
               </div>
             </div>
 
             <div>
               <h3 className="font-mono text-sm tracking-widest uppercase text-muted-foreground mb-3">
-                Descripción
+                {t("work.descriptionTitle")}
               </h3>
               <p className="font-body text-base md:text-lg leading-relaxed text-foreground/80">
-                Diseñadora gráfica con base técnica en Adobe Suite y ~3 años de experiencia
-                en branding, identidad visual y contenido digital. Formada en CFGS Diseño
-                Gráfico (Escuela de Arte de Toledo). Interés creciente en UX y flujos creativos con IA.
+                {t("work.description")}
               </p>
             </div>
           </div>

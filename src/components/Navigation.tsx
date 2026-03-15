@@ -1,13 +1,16 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 const navItems = [
-  { label: "Home", href: "#home" },
-  { label: "Work", href: "#work" },
-  { label: "Others", href: "#others" },
-  { label: "Contact", href: "#contact" },
+  { key: "nav.home", href: "#home" },
+  { key: "nav.work", href: "#work" },
+  { key: "nav.others", href: "#others" },
+  { key: "nav.contact", href: "#contact" },
 ];
 
 const Navigation = () => {
+  const { t } = useTranslation();
+
   return (
     <motion.nav
       initial={{ opacity: 0, y: -20 }}
@@ -18,8 +21,8 @@ const Navigation = () => {
       <div className="nav-link font-bold tracking-widest">C.</div>
       <div className="flex gap-8">
         {navItems.map((item) => (
-          <a key={item.label} href={item.href} className="nav-link">
-            {item.label}
+          <a key={item.key} href={item.href} className="nav-link">
+            {t(item.key)}
           </a>
         ))}
       </div>

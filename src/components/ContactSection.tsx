@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 const ContactSection = () => {
+  const { t } = useTranslation();
+
   return (
     <section id="contact" className="min-h-screen py-16 px-4 sm:px-6 md:py-24 md:px-16 flex items-center justify-center">
       <div className="relative w-full max-w-4xl mx-auto flex flex-col items-center gap-8 md:block md:min-h-[600px]">
@@ -23,7 +26,7 @@ const ContactSection = () => {
           {/* Header */}
           <div className="bg-accent/10 px-6 py-4 border-b border-dashed border-muted-foreground/20">
             <div className="flex justify-between items-center">
-              <span className="font-mono text-[11px] tracking-widest uppercase text-card-foreground/50">Boarding Pass</span>
+              <span className="font-mono text-[11px] tracking-widest uppercase text-card-foreground/50">{t("contact.boardingPass")}</span>
               <span className="font-mono text-lg text-card-foreground/50">✈</span>
             </div>
           </div>
@@ -31,24 +34,24 @@ const ContactSection = () => {
           <div className="p-8 space-y-6">
             <div className="flex justify-between">
               <div>
-                <p className="font-mono text-[9px] tracking-widest uppercase text-muted-foreground/60">Pasajero</p>
+                <p className="font-mono text-[9px] tracking-widest uppercase text-muted-foreground/60">{t("contact.passenger")}</p>
                 <p className="font-display text-xl font-bold text-card-foreground">Carmen</p>
               </div>
               <div className="text-right">
-                <p className="font-mono text-[9px] tracking-widest uppercase text-muted-foreground/60">Destino</p>
-                <p className="font-display text-xl font-bold text-card-foreground">Tu proyecto</p>
+                <p className="font-mono text-[9px] tracking-widest uppercase text-muted-foreground/60">{t("contact.destination")}</p>
+                <p className="font-display text-xl font-bold text-card-foreground">{t("contact.destinationValue")}</p>
               </div>
             </div>
 
             <div className="space-y-4 border-t border-dashed border-muted-foreground/20 pt-5">
               <div className="flex justify-between">
                 <div>
-                  <p className="font-mono text-[9px] tracking-widest uppercase text-muted-foreground/60">Contacto</p>
-                  <p className="font-body text-sm text-card-foreground">Disponible por LinkedIn</p>
+                  <p className="font-mono text-[9px] tracking-widest uppercase text-muted-foreground/60">{t("contact.contact")}</p>
+                  <p className="font-body text-sm text-card-foreground">{t("contact.contactValue")}</p>
                 </div>
                 <div className="text-right">
-                  <p className="font-mono text-[9px] tracking-widest uppercase text-muted-foreground/60">Ubicación</p>
-                  <p className="font-body text-sm text-card-foreground">España</p>
+                  <p className="font-mono text-[9px] tracking-widest uppercase text-muted-foreground/60">{t("contact.location")}</p>
+                  <p className="font-body text-sm text-card-foreground">{t("contact.locationValue")}</p>
                 </div>
               </div>
 
@@ -58,8 +61,8 @@ const ContactSection = () => {
                   <p className="font-body text-sm text-card-foreground">carmencaballeromedina</p>
                 </div>
                 <div className="text-right">
-                  <p className="font-mono text-[9px] tracking-widest uppercase text-muted-foreground/60">Herramientas</p>
-                  <p className="font-body text-sm text-card-foreground">Ai · Ps · Id</p>
+                  <p className="font-mono text-[9px] tracking-widest uppercase text-muted-foreground/60">{t("contact.tools")}</p>
+                  <p className="font-body text-sm text-card-foreground">{t("contact.toolsValue")}</p>
                 </div>
               </div>
             </div>
@@ -106,7 +109,7 @@ const ContactSection = () => {
               <span className="font-mono text-sm text-primary/70">✦</span>
             </div>
             <p className="font-mono text-[10px] tracking-[0.35em] uppercase text-primary/50 mb-1">Portfolio</p>
-            <p className="font-display text-xl text-primary/80 font-bold">PASAPORTE</p>
+            <p className="font-display text-xl text-primary/80 font-bold">{t("contact.passport.title")}</p>
           </div>
 
           {/* Inner pages */}
@@ -114,39 +117,37 @@ const ContactSection = () => {
             <div className="flex flex-col sm:flex-row gap-5 p-6 sm:p-7">
               {/* Photo */}
               <div className="w-full sm:w-28 h-32 bg-muted/30 border border-muted-foreground/20 rounded-sm flex items-center justify-center flex-shrink-0">
-                <span className="font-mono text-[10px] text-muted-foreground">FOTO</span>
+                <span className="font-mono text-[10px] text-muted-foreground">{t("contact.passport.photo")}</span>
               </div>
 
               {/* Info */}
               <div className="space-y-4 flex-1 min-w-0">
                 <div>
-                  <p className="font-mono text-[9px] tracking-widest uppercase text-muted-foreground/60">Nombre</p>
-                  <p className="font-display text-lg font-bold text-card-foreground">Carmen Caballero</p>
+                  <p className="font-mono text-[9px] tracking-widest uppercase text-muted-foreground/60">{t("contact.passport.name")}</p>
+                  <p className="font-display text-lg font-bold text-card-foreground">{t("contact.passport.nameValue")}</p>
                 </div>
                 <div>
-                  <p className="font-mono text-[9px] tracking-widest uppercase text-muted-foreground/60">Nacionalidad</p>
-                  <p className="font-body text-sm text-card-foreground">Española</p>
+                  <p className="font-mono text-[9px] tracking-widest uppercase text-muted-foreground/60">{t("contact.passport.nationality")}</p>
+                  <p className="font-body text-sm text-card-foreground">{t("contact.passport.nationalityValue")}</p>
                 </div>
                 <div>
-                  <p className="font-mono text-[9px] tracking-widest uppercase text-muted-foreground/60">Profesión</p>
-                  <p className="font-body text-sm text-card-foreground">Diseñadora Gráfica</p>
+                  <p className="font-mono text-[9px] tracking-widest uppercase text-muted-foreground/60">{t("contact.passport.profession")}</p>
+                  <p className="font-body text-sm text-card-foreground">{t("contact.passport.professionValue")}</p>
                 </div>
               </div>
             </div>
 
             {/* About me */}
             <div className="px-6 sm:px-7 pb-7">
-              <p className="font-mono text-[9px] tracking-widest uppercase text-muted-foreground/60 mb-3">About me</p>
+              <p className="font-mono text-[9px] tracking-widest uppercase text-muted-foreground/60 mb-3">{t("contact.passport.aboutMeTitle")}</p>
               <p className="font-body text-sm leading-relaxed text-card-foreground/80">
-                Diseñadora gráfica con base en Adobe Suite y experiencia en branding,
-                identidad visual y contenido digital. Formada en la Escuela de Arte de Toledo.
-                Actualmente en iO.GENIX, con interés creciente en UX e IA creativa.
+                {t("contact.passport.aboutMe")}
               </p>
 
               {/* Stamps */}
               <div className="flex gap-5 mt-5 justify-end flex-wrap">
                 <div className="stamp rotate-[-12deg]">
-                  Toledo
+                  {t("contact.passport.stampToledo")}
                 </div>
                 <div className="stamp rotate-[8deg] border-muted-foreground/40 text-muted-foreground/60">
                   

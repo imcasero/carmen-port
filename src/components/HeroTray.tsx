@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import cameraImg from "../assets/red-camera.png";
 import kindleImg from "../assets/kindle.png";
 import sunglassesImg from "../assets/sunglasses.png";
@@ -12,6 +13,8 @@ import ticketImg from "../assets/stamp-1.png";
 import trayImg from "../assets/tray.png";
 
 const HeroTray = () => {
+  const { t } = useTranslation();
+
   return (
     <section 
       id="home" 
@@ -37,7 +40,7 @@ const HeroTray = () => {
               CARMEN
             </span>
             <span className="magazine-cut text-xs min-[480px]:text-sm md:text-base lg:text-xl mt-2 rotate-[2deg]">
-              graphic designer
+              {t("hero.role")}
             </span>
           </div>
         </div>
