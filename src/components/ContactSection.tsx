@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="min-h-screen py-24 px-6 md:px-16 flex items-center justify-center">
-      <div className="relative w-full max-w-4xl mx-auto min-h-[700px] md:min-h-[600px]">
+    <section id="contact" className="min-h-screen py-16 px-4 sm:px-6 md:py-24 md:px-16 flex items-center justify-center">
+      <div className="relative w-full max-w-4xl mx-auto flex flex-col items-center gap-8 md:block md:min-h-[600px]">
         
         {/* Boarding Pass - behind, offset */}
         <motion.div
@@ -18,7 +18,7 @@ const ContactSection = () => {
             zIndex: 20,
             transition: { duration: 0.4, ease: "easeOut" }
           }}
-          className="boarding-pass w-[360px] md:w-[480px] rounded-lg overflow-hidden absolute right-0 md:right-[2%] top-[50%] md:top-[15%] z-0 cursor-pointer"
+          className="boarding-pass w-full max-w-[360px] md:max-w-none md:w-[480px] rounded-lg overflow-hidden relative md:absolute md:right-[2%] md:top-[15%] z-0 cursor-pointer"
         >
           {/* Header */}
           <div className="bg-accent/10 px-6 py-4 border-b border-dashed border-muted-foreground/20">
@@ -98,7 +98,7 @@ const ContactSection = () => {
             zIndex: 30,
             transition: { duration: 0.4, ease: "easeOut" }
           }}
-          className="passport-cover w-[340px] md:w-[420px] p-1 relative z-10 cursor-pointer"
+          className="passport-cover w-full max-w-[340px] md:max-w-none md:w-[420px] p-1 relative z-10 cursor-pointer"
         >
           {/* Cover */}
           <div className="text-center py-10">
@@ -111,14 +111,14 @@ const ContactSection = () => {
 
           {/* Inner pages */}
           <div className="passport-inner rounded-sm mx-1 mb-1">
-            <div className="flex gap-5 p-7">
+            <div className="flex flex-col sm:flex-row gap-5 p-6 sm:p-7">
               {/* Photo */}
-              <div className="w-28 h-32 bg-muted/30 border border-muted-foreground/20 rounded-sm flex items-center justify-center flex-shrink-0">
+              <div className="w-full sm:w-28 h-32 bg-muted/30 border border-muted-foreground/20 rounded-sm flex items-center justify-center flex-shrink-0">
                 <span className="font-mono text-[10px] text-muted-foreground">FOTO</span>
               </div>
 
               {/* Info */}
-              <div className="space-y-4 flex-1">
+              <div className="space-y-4 flex-1 min-w-0">
                 <div>
                   <p className="font-mono text-[9px] tracking-widest uppercase text-muted-foreground/60">Nombre</p>
                   <p className="font-display text-lg font-bold text-card-foreground">Carmen Caballero</p>
@@ -135,7 +135,7 @@ const ContactSection = () => {
             </div>
 
             {/* About me */}
-            <div className="px-7 pb-7">
+            <div className="px-6 sm:px-7 pb-7">
               <p className="font-mono text-[9px] tracking-widest uppercase text-muted-foreground/60 mb-3">About me</p>
               <p className="font-body text-sm leading-relaxed text-card-foreground/80">
                 Diseñadora gráfica con base en Adobe Suite y experiencia en branding,
@@ -144,7 +144,7 @@ const ContactSection = () => {
               </p>
 
               {/* Stamps */}
-              <div className="flex gap-5 mt-5 justify-end">
+              <div className="flex gap-5 mt-5 justify-end flex-wrap">
                 <div className="stamp rotate-[-12deg]">
                   Toledo
                 </div>
