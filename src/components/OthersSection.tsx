@@ -1,16 +1,36 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-const otherItems = [
-  { id: 1, rotate: -6, top: "4%", left: "5%", width: 240, height: 300, label: "Ilustración", desc: "Exploración tipográfica y composición de formas geométricas para uso editorial." },
-  { id: 2, rotate: 5, top: "2%", left: "38%", width: 280, height: 210, label: "Fotografía", desc: "Capturas del día a día — objetos, texturas y luz natural. Toledo, Madrid, Barcelona." },
-  { id: 3, rotate: -3, top: "6%", left: "72%", width: 220, height: 280, label: "Editorial", desc: "Diseño de publicación y maquetación. Trabajo con InDesign y grilla tipográfica." },
-  { id: 4, rotate: 7, top: "52%", left: "3%", width: 260, height: 195, label: "Motion", desc: "Piezas de contenido animado para redes sociales. Edición en CapCut y After Effects." },
-  { id: 5, rotate: -4, top: "48%", left: "40%", width: 230, height: 310, label: "Collage", desc: "Collage analógico y digital. Recortes, capas y texturas combinadas manualmente." },
-  { id: 6, rotate: 3, top: "55%", left: "74%", width: 200, height: 260, label: "Sketchbook", desc: "Bocetos y experimentos visuales de proceso creativo. Ideas en crudo." },
+import imgZma from "@/assets/projects/social/social-post-zma.png";
+import imgLavender from "@/assets/projects/stories/story-lavender.png";
+import imgBbqNewsletter from "@/assets/projects/newsletters/newsletter-bbq-chips.png";
+import videoBallsSpace from "@/assets/projects/stories/story-balls-space-animated.mp4";
+import imgAquaLaunch from "@/assets/projects/stories/story-aqua-launch-text.png";
+import imgSocialGeneric from "@/assets/projects/social/social-post-generic.png";
+
+type OtherItem = {
+  id: number;
+  rotate: number;
+  top: string;
+  left: string;
+  width: number;
+  aspectRatio: string;
+  label: string;
+  desc: string;
+  img?: string;
+  video?: string;
+};
+
+const otherItems: OtherItem[] = [
+  { id: 1, rotate: -5, top: "1%",  left: "5%",  width: 340, aspectRatio: "1080/1080", label: "Ilustración", desc: "Exploración tipográfica y composición de formas geométricas para uso editorial.", img: imgZma },
+  { id: 2, rotate: 6,  top: "0%",  left: "30%", width: 255, aspectRatio: "1080/1920", label: "Fotografía",  desc: "Capturas del día a día — objetos, texturas y luz natural. Toledo, Madrid, Barcelona.", img: imgLavender },
+  { id: 3, rotate: -3, top: "4%",  left: "63%", width: 310, aspectRatio: "1080/1350", label: "Editorial",   desc: "Diseño de publicación y maquetación. Trabajo con InDesign y grilla tipográfica.", img: imgBbqNewsletter },
+  { id: 4, rotate: 8,  top: "48%", left: "7%",  width: 255, aspectRatio: "1080/1920", label: "Motion",      desc: "Piezas de contenido animado para redes sociales. Edición en CapCut y After Effects.", video: videoBallsSpace },
+  { id: 5, rotate: -5, top: "46%", left: "39%", width: 255, aspectRatio: "816/1456",  label: "Collage",     desc: "Collage analógico y digital. Recortes, capas y texturas combinadas manualmente.", img: imgAquaLaunch },
+  { id: 6, rotate: 4,  top: "49%", left: "69%", width: 320, aspectRatio: "1080/1080", label: "Sketchbook",  desc: "Bocetos y experimentos visuales de proceso creativo. Ideas en crudo.", img: imgSocialGeneric },
 ];
 
-const FlipCard = ({ item, index }: { item: typeof otherItems[0]; index: number }) => {
+const FlipCard = ({ item, index }: { item: OtherItem; index: number }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
   return (
@@ -33,7 +53,7 @@ const FlipCard = ({ item, index }: { item: typeof otherItems[0]; index: number }
         transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
         style={{
           width: item.width,
-          height: item.height,
+          aspectRatio: item.aspectRatio,
           transformStyle: "preserve-3d",
           rotate: `${item.rotate}deg`,
         }}
@@ -41,12 +61,21 @@ const FlipCard = ({ item, index }: { item: typeof otherItems[0]; index: number }
       >
         {/* Front */}
         <div
-          className="polaroid absolute inset-0 flex items-center justify-center"
+          className="polaroid absolute inset-0 overflow-hidden"
           style={{ backfaceVisibility: "hidden" }}
         >
-          <div className="w-full h-full bg-muted/40 flex items-center justify-center">
-            <span className="font-mono text-xs text-muted-foreground">{item.label}</span>
-          </div>
+          {item.video ? (
+            <video
+              src={item.video}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <img src={item.img} alt={item.label} className="w-full h-full object-cover" />
+          )}
         </div>
 
         {/* Back */}
@@ -59,10 +88,10 @@ const FlipCard = ({ item, index }: { item: typeof otherItems[0]; index: number }
             boxShadow: "3px 3px 12px rgba(0,0,0,0.35)",
           }}
         >
-          <p className="font-display text-sm font-bold text-center mb-3" style={{ color: "hsl(0 0% 15%)" }}>
+          <p className="font-display text-lg font-bold text-center mb-4" style={{ color: "hsl(0 0% 15%)" }}>
             {item.label}
           </p>
-          <p className="font-body text-xs leading-relaxed text-center" style={{ color: "hsl(0 0% 30%)" }}>
+          <p className="font-body text-sm leading-relaxed text-center" style={{ color: "hsl(0 0% 30%)" }}>
             {item.desc}
           </p>
         </div>
@@ -88,7 +117,7 @@ const OthersSection = () => {
         </motion.div>
 
         {/* Desktop scattered polaroids with flip */}
-        <div className="relative h-[800px] hidden md:block">
+        <div className="relative h-[1050px] hidden md:block">
           {otherItems.map((item, i) => (
             <FlipCard key={item.id} item={item} index={i} />
           ))}
@@ -99,7 +128,7 @@ const OthersSection = () => {
             whileInView={{ opacity: 1, rotate: -15 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="stamp absolute top-[0%] left-[30%]"
+            className="stamp absolute top-[44%] left-[26%]"
           >
             MADRID
           </motion.div>
@@ -125,8 +154,12 @@ const OthersSection = () => {
               className="polaroid"
               style={{ rotate: `${item.rotate}deg` }}
             >
-              <div className="w-full aspect-[3/4] bg-muted/40 flex items-center justify-center">
-                <span className="font-mono text-[10px] text-muted-foreground">{item.label}</span>
+              <div className="w-full aspect-[3/4] overflow-hidden">
+                {item.video ? (
+                  <video src={item.video} autoPlay loop muted playsInline className="w-full h-full object-cover" />
+                ) : (
+                  <img src={item.img} alt={item.label} className="w-full h-full object-cover" />
+                )}
               </div>
               <p className="font-body text-[9px] text-center pt-1 pb-1" style={{ color: "hsl(0 0% 40%)" }}>
                 {item.desc}
