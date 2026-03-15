@@ -84,11 +84,38 @@ export default {
           "0%, 100%": { transform: "translateY(0px)" },
           "50%": { transform: "translateY(-6px)" },
         },
+        bounce: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-12px)" },
+        },
+        sway: {
+          "0%, 100%": { transform: "translateX(0) rotate(0deg)" },
+          "50%": { transform: "translateX(8px) rotate(2deg)" },
+        },
+        pulse: {
+          "0%, 100%": { transform: "scale(1)" },
+          "50%": { transform: "scale(1.08)" },
+        },
+        rock: {
+          "0%, 100%": { transform: "rotate(-3deg)" },
+          "50%": { transform: "rotate(3deg)" },
+        },
+        shimmy: {
+          "0%, 100%": { transform: "translateX(-2px)" },
+          "25%": { transform: "translateX(2px)" },
+          "50%": { transform: "translateX(-2px)" },
+          "75%": { transform: "translateX(2px)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         float: "float 4s ease-in-out infinite",
+        bounce: "bounce 3s ease-in-out infinite",
+        sway: "sway 3.5s ease-in-out infinite",
+        pulse: "pulse 2.5s ease-in-out infinite",
+        rock: "rock 2s ease-in-out infinite",
+        shimmy: "shimmy 1.5s ease-in-out infinite",
       },
     },
   },

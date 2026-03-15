@@ -1,24 +1,32 @@
 import { motion } from "framer-motion";
 
+// Deterministic barcode widths (avoid Math.random() in render)
+const BARCODE_WIDTHS = Array.from({ length: 50 }, (_, i) =>
+  ((i * 7 + 13) % 3 === 0) ? 2.5 : 1
+);
+
 const ContactSection = () => {
   return (
     <section id="contact" className="min-h-screen py-16 px-4 sm:px-6 md:py-24 md:px-16 flex items-center justify-center">
       <div className="relative w-full max-w-4xl mx-auto flex flex-col items-center gap-8 md:block md:min-h-[600px]">
         
         {/* Boarding Pass - behind, offset */}
-        <motion.div
+        <motion.a
+          href="https://www.linkedin.com/in/carmencaballeromedina/"
+          target="_blank"
+          rel="noopener noreferrer"
           initial={{ opacity: 0, x: 60, rotate: 8 }}
           whileInView={{ opacity: 1, x: 0, rotate: 5 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.15 }}
-          whileHover={{ 
-            x: 80, 
-            rotate: 12, 
+          whileHover={{
+            x: 80,
+            rotate: 12,
             scale: 1.02,
             zIndex: 20,
             transition: { duration: 0.4, ease: "easeOut" }
           }}
-          className="boarding-pass w-full max-w-[360px] md:max-w-none md:w-[480px] rounded-lg overflow-hidden relative md:absolute md:right-[2%] md:top-[15%] z-0 cursor-pointer"
+          className="boarding-pass w-full max-w-[360px] md:max-w-none md:w-[480px] rounded-lg overflow-hidden relative md:absolute md:right-[2%] md:top-[15%] z-0 cursor-pointer block hover:opacity-90 transition-opacity"
         >
           {/* Header */}
           <div className="bg-accent/10 px-6 py-4 border-b border-dashed border-muted-foreground/20">
@@ -55,7 +63,14 @@ const ContactSection = () => {
               <div className="flex justify-between">
                 <div>
                   <p className="font-mono text-[9px] tracking-widest uppercase text-muted-foreground/60">LinkedIn</p>
-                  <p className="font-body text-sm text-card-foreground">carmencaballeromedina</p>
+                  <a
+                    href="https://www.linkedin.com/in/carmencaballeromedina/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-body text-sm text-card-foreground hover:text-accent hover:underline transition-colors"
+                  >
+                    carmencaballeromedina
+                  </a>
                 </div>
                 <div className="text-right">
                   <p className="font-mono text-[9px] tracking-widest uppercase text-muted-foreground/60">Herramientas</p>
@@ -67,12 +82,12 @@ const ContactSection = () => {
             {/* Barcode */}
             <div className="pt-4 border-t border-dashed border-muted-foreground/20">
               <div className="flex gap-[2px] justify-center">
-                {Array.from({ length: 50 }).map((_, i) => (
+                {BARCODE_WIDTHS.map((width, i) => (
                   <div
                     key={i}
                     className="bg-card-foreground/70"
                     style={{
-                      width: Math.random() > 0.5 ? 2.5 : 1,
+                      width,
                       height: 34,
                     }}
                   />
@@ -83,7 +98,7 @@ const ContactSection = () => {
               </p>
             </div>
           </div>
-        </motion.div>
+        </motion.a>
 
         {/* Passport - on top */}
         <motion.div
@@ -149,7 +164,7 @@ const ContactSection = () => {
                   Toledo
                 </div>
                 <div className="stamp rotate-[8deg] border-muted-foreground/40 text-muted-foreground/60">
-                  
+                  iO.GENIX
                 </div>
               </div>
             </div>
