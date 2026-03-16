@@ -94,7 +94,7 @@ export function CustomCursor() {
         <path
           d={createPath()}
           fill="none"
-          stroke="white"
+          stroke="#e4f101"
           strokeWidth="1"
           strokeLinecap="round"
           strokeLinejoin="round"

@@ -19,18 +19,18 @@
 }
 
 .trail-svg path {
-  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.8));
+  filter: drop-shadow(0 0 3px rgba(228, 241, 1, 1));
   animation: fadeOut 1s ease-out forwards;
-  stroke-dasharray: 5, 5;
+  stroke-dasharray: 15, 5;
 }
 
 .trail-dot {
   position: fixed;
-  width: 6px;
+  width:6px;
   height: 6px;
   pointer-events: none;
   z-index: 9998;
-  background-color: white;
+  background-color: rgba(228, 241, 1, 1);
   border-radius: 50%;
   transform: translate(-50%, -50%);
   box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);

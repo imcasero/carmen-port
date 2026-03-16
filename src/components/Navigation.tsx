@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { useState, useEffect } from "react";
+import { animateScroll } from "react-scroll";
 
 const navItems = [
   { key: "nav.home", href: "#home" },
@@ -12,6 +13,21 @@ const navItems = [
 const Navigation = () => {
   const { t } = useTranslation();
   const [activeSection, setActiveSection] = useState("home");
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+    
+    const element = document.getElementById(targetId);
+    if (element) {
+      const offset = 80; // Offset for fixed header
+      const elementPosition = element.offsetTop - offset;
+      
+      animateScroll.scrollTo(elementPosition, {
+        duration: 800,
+        smooth: "easeInOutQuart"
+      });
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,7 +65,12 @@ const Navigation = () => {
           const isActive = activeSection === sectionId;
           
           return (
-            <a key={item.key} href={item.href} className="nav-link relative py-1">
+            <a 
+              key={item.key} 
+              href={item.href} 
+              className="nav-link relative py-1"
+              onClick={(e) => handleNavClick(e, sectionId)}
+            >
               <span className="transition-colors duration-300">
                 {t(item.key)}
               </span>

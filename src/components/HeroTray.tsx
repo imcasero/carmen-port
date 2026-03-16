@@ -48,7 +48,7 @@ const HeroTray = () => {
             <span className="magazine-cut text-[3rem] min-[480px]:text-6xl md:text-7xl lg:text-9xl tracking-tight rotate-[-2deg]">
               CARMEN
             </span>
-            <span className="magazine-cut text-xs min-[480px]:text-sm md:text-base lg:text-6xl mt-2 rotate-[2deg]">
+            <span className="magazine-cut text-xs pb-4 min-[480px]:text-sm md:text-base lg:text-6xl mt-2 rotate-[2deg]">
               {t("hero.role")}
             </span>
           </div>
