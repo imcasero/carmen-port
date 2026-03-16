@@ -2,19 +2,19 @@ import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
 import imgBannerGymbro from "@/assets/projects/banners/banner-gymbro-pack.png";
-import imgStoryHydracherry from "@/assets/projects/stories/story-hydracherry.png";
+import videoEssentialKit from "@/assets/projects/stories/essential_kit.mp4";
 import imgYoutubAndroblast from "@/assets/projects/youtube/youtube-thumbnail-androblast.png";
 import imgSocialBars from "@/assets/projects/social/social-post-bars.png";
 import imgNewsletterIntra from "@/assets/projects/newsletters/newsletter-intrawork-promo.png";
-import imgStoryAloe from "@/assets/projects/stories/story-aloe-launch.png";
+import socialPostZma from "@/assets/projects/social/social-post-zma.png";
 
 const workItems = [
-  { id: 1, rotate: -5, top: "5%", left: "5%", width: "45%", aspectRatio: "3002/1100", label: "GymBro Pack · Banner", img: imgBannerGymbro },
-  { id: 2, rotate: 14, top: "0%", left: "38%", width: "30%", aspectRatio: "1080/1920", label: "HydraCherry · Story", img: imgStoryHydracherry },
-  { id: 3, rotate: -3, top: "2%", left: "68%", width: "30%", aspectRatio: "1920/1080", label: "Androblast · YouTube", img: imgYoutubAndroblast },
+  { id: 2, rotate: 14, top: "0%", left: "38%", width: "30%", aspectRatio: "1080/1920", label: "Video Essential Kit · Story", video: videoEssentialKit },
+  { id: 1, rotate: 5, top: "5%", left: "5%", width: "45%", aspectRatio: "3002/1100", label: "GymBro Pack · Banner", img: imgBannerGymbro },
+  { id: 3, rotate: -3, top: "75%", left: "35%", width: "30%", aspectRatio: "1920/1080", label: "Androblast · YouTube", img: imgYoutubAndroblast },
   { id: 4, rotate: 5, top: "45%", left: "8%", width: "30%", aspectRatio: "1080/1080", label: "Barritas · Post Social", img: imgSocialBars },
-  { id: 5, rotate: -8, top: "55%", left: "35%", width: "32%", aspectRatio: "1080/1350", label: "IntraWork · Newsletter", img: imgNewsletterIntra },
-  { id: 6, rotate: 4, top: "38%", left: "72%", width: "26%", aspectRatio: "816/1456", label: "Aloe Vera · Story", img: imgStoryAloe },
+  { id: 5, rotate: -8, top: "2%", left: "68%", width: "29%", aspectRatio: "1080/1350", label: "IntraWork · Newsletter", img: imgNewsletterIntra },
+  { id: 6, rotate: 4, top: "50%", left: "70%", width: "35%", aspectRatio: "1080/1080", label: "Aloe Vera · Story", img: socialPostZma },
 ];
 
 const WorkSection = () => {
@@ -78,7 +78,7 @@ const WorkSection = () => {
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.12 }}
-              className="postcard absolute cursor-pointer hover:z-20 transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+              className={`postcard absolute cursor-pointer hover:z-20 transition-all duration-300 hover:scale-105 hover:shadow-2xl ${item.video ? 'z-10' : ''}`}
               style={{
                 rotate: `${item.rotate}deg`,
                 top: item.top,
@@ -90,11 +90,22 @@ const WorkSection = () => {
                 className="w-full overflow-hidden"
                 style={{ aspectRatio: item.aspectRatio }}
               >
-                <img
-                  src={item.img}
-                  alt={item.label}
-                  className="w-full h-full object-cover"
-                />
+                {item.video ? (
+                  <video
+                    src={item.video}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <img
+                    src={item.img}
+                    alt={item.label}
+                    className="w-full h-full object-cover"
+                  />
+                )}
               </div>
               <div className="p-3">
                 <p className="font-mono text-[10px] text-card-foreground/60">{item.label}</p>
@@ -116,11 +127,22 @@ const WorkSection = () => {
               style={{ rotate: `${item.rotate}deg` }}
             >
               <div className="w-full overflow-hidden" style={{ aspectRatio: item.aspectRatio }}>
-                <img
-                  src={item.img}
-                  alt={item.label}
-                  className="w-full h-full object-cover"
-                />
+                {item.video ? (
+                  <video
+                    src={item.video}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <img
+                    src={item.img}
+                    alt={item.label}
+                    className="w-full h-full object-cover"
+                  />
+                )}
               </div>
               <div className="p-3">
                 <p className="font-mono text-[10px] text-card-foreground/60">{item.label}</p>
