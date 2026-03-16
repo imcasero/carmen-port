@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import passportPhoto from "@/assets/carmen_caballero.jpg";
 
 const ContactSection = () => {
   const { t } = useTranslation();
@@ -117,7 +118,7 @@ const ContactSection = () => {
             <div className="flex flex-col sm:flex-row gap-5 p-6 sm:p-7">
               {/* Photo */}
               <div className="w-full sm:w-28 h-32 bg-muted/30 border border-muted-foreground/20 rounded-sm flex items-center justify-center flex-shrink-0">
-                <span className="font-mono text-[10px] text-muted-foreground">{t("contact.passport.photo")}</span>
+                <img src={passportPhoto} alt="Passport photo" className="w-full h-full object-cover" />
               </div>
 
               {/* Info */}
