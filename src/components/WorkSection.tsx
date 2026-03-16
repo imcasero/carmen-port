@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { OptimizedVideo } from "./ui/OptimizedVideo";
 
 import imgBannerGymbro from "@/assets/projects/banners/banner-gymbro-pack.png";
 import videoEssentialKit from "@/assets/projects/stories/essential_kit.mp4";
@@ -91,12 +92,13 @@ const WorkSection = () => {
                 style={{ aspectRatio: item.aspectRatio }}
               >
                 {item.video ? (
-                  <video
+                  <OptimizedVideo
                     src={item.video}
                     autoPlay
                     loop
                     muted
                     playsInline
+                    preload="metadata"
                     className="w-full h-full object-cover"
                   />
                 ) : (
@@ -104,6 +106,8 @@ const WorkSection = () => {
                     src={item.img}
                     alt={item.label}
                     className="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
                   />
                 )}
               </div>
@@ -128,12 +132,13 @@ const WorkSection = () => {
             >
               <div className="w-full overflow-hidden" style={{ aspectRatio: item.aspectRatio }}>
                 {item.video ? (
-                  <video
+                  <OptimizedVideo
                     src={item.video}
                     autoPlay
                     loop
                     muted
                     playsInline
+                    preload="metadata"
                     className="w-full h-full object-cover"
                   />
                 ) : (
@@ -141,6 +146,8 @@ const WorkSection = () => {
                     src={item.img}
                     alt={item.label}
                     className="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
                   />
                 )}
               </div>

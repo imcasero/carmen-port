@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { OptimizedVideo } from "./ui/OptimizedVideo";
 
 import hamiltonIllustration from "@/assets/projects/illustrations/hamilton_illustration.png";
 import photografy from "@/assets/projects/social/photo.jpg"
@@ -68,16 +69,17 @@ const FlipCard = ({ item, index }: { item: OtherItem; index: number }) => {
           style={{ backfaceVisibility: "hidden" }}
         >
           {item.video ? (
-            <video
+            <OptimizedVideo
               src={item.video}
               autoPlay
               loop
               muted
               playsInline
+              preload="metadata"
               className="w-full h-full object-cover"
             />
           ) : (
-            <img src={item.img} alt={t(item.label)} className="w-full h-full object-cover" />
+            <img src={item.img} alt={t(item.label)} className="w-full h-full object-cover" loading="lazy" decoding="async" />
           )}
         </div>
 
@@ -161,9 +163,9 @@ const OthersSection = () => {
             >
               <div className="w-full aspect-[3/4] overflow-hidden">
                 {item.video ? (
-                  <video src={item.video} autoPlay loop muted playsInline className="w-full h-full object-cover" />
+                  <OptimizedVideo src={item.video} autoPlay loop muted playsInline preload="metadata" className="w-full h-full object-cover" />
                 ) : (
-                  <img src={item.img} alt={t(item.label)} className="w-full h-full object-cover" />
+                  <img src={item.img} alt={t(item.label)} className="w-full h-full object-cover" loading="lazy" decoding="async" />
                 )}
               </div>
               <p className="font-body text-[9px] text-center pt-1 pb-1" style={{ color: "hsl(0 0% 40%)" }}>

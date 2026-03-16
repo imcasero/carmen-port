@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { OptimizedImage } from "./ui/OptimizedImage";
 import cameraImg from "../assets/red-camera.png";
 import kindleImg from "../assets/kindle.png";
 import sunglassesImg from "../assets/sunglasses.png";
@@ -50,7 +51,7 @@ const HeroTray = () => {
           className="absolute top-[25%] left-[13%] w-[16%]"
           style={{ rotate: "-15deg" }}
         >
-          <img src={cameraImg} alt="Camera" className="w-full h-auto object-contain drop-shadow-lg" />
+          <OptimizedImage src={cameraImg} alt="Camera" className="w-full h-auto object-contain drop-shadow-lg" loading="eager" />
         </motion.div>
 
         {/* Polaroid - top center */}
@@ -58,7 +59,7 @@ const HeroTray = () => {
           className="absolute top-[24%] left-[45%] w-[8%]"
           style={{ rotate: "8deg" }}
         >
-          <img src={scrapbookImg} alt="Polaroid" className="w-full h-auto object-contain drop-shadow-md" />
+          <OptimizedImage src={scrapbookImg} alt="Polaroid" className="w-full h-auto object-contain drop-shadow-md" loading="eager" />
         </motion.div>
 
         {/* Kindle - top right area */}
@@ -66,7 +67,7 @@ const HeroTray = () => {
           className="absolute top-[23%] right-[13%] w-[13%]"
           style={{ rotate: "-2deg" }}
         >
-          <img src={kindleImg} alt="Kindle" className="w-full h-auto object-contain drop-shadow-lg" />
+          <OptimizedImage src={kindleImg} alt="Kindle" className="w-full h-auto object-contain drop-shadow-lg" loading="eager" />
         </motion.div>
 
         {/* Flower - scattered upper left */}
@@ -74,7 +75,7 @@ const HeroTray = () => {
           className="absolute top-[35%] left-[34%] w-[6%]"
           style={{ rotate: "-10deg" }}
         >
-          <img src={flowerImg} alt="Flower" className="w-full h-auto object-contain drop-shadow-md" />
+          <OptimizedImage src={flowerImg} alt="Flower" className="w-full h-auto object-contain drop-shadow-md" />
         </motion.div>
 
         {/* Sunglasses - left middle */}
@@ -82,7 +83,7 @@ const HeroTray = () => {
           className="absolute top-[65%] left-[45%] w-[14%] -translate-y-1/2"
           style={{ rotate: "12deg" }}
         >
-          <img src={sunglassesImg} alt="Sunglasses" className="w-full h-auto object-contain drop-shadow-lg" />
+          <OptimizedImage src={sunglassesImg} alt="Sunglasses" className="w-full h-auto object-contain drop-shadow-lg" />
         </motion.div>
 
         {/* Airpods - right middle */}
@@ -90,7 +91,7 @@ const HeroTray = () => {
           className="absolute top-[52%] right-[10%] w-[13%] -translate-y-1/2"
           style={{ rotate: "15deg" }}
         >
-          <img src={airpodsImg} alt="Airpods" className="w-full h-auto object-contain drop-shadow-sm" />
+          <OptimizedImage src={airpodsImg} alt="Airpods" className="w-full h-auto object-contain drop-shadow-sm" />
         </motion.div>
 
         {/* Macbook - bottom left */}
@@ -98,7 +99,7 @@ const HeroTray = () => {
           className="absolute bottom-[20%] left-[13%] w-[28%]"
           style={{ rotate: "0deg" }}
         >
-          <img src={macbookImg} alt="Macbook" className="w-full h-auto object-contain drop-shadow-lg" />
+          <OptimizedImage src={macbookImg} alt="Macbook" className="w-full h-auto object-contain drop-shadow-lg" />
         </motion.div>
 
         {/* Sticker - bottom center */}
@@ -106,7 +107,7 @@ const HeroTray = () => {
           className="absolute bottom-[21%] left-[52%] w-[6%]"
           style={{ rotate: "-8deg" }}
         >
-          <img src={stickerImg} alt="Sticker" className="w-full h-auto object-contain drop-shadow-sm" />
+          <OptimizedImage src={stickerImg} alt="Sticker" className="w-full h-auto object-contain drop-shadow-sm" />
         </motion.div>
 
         {/* Seashell - bottom center-right */}
@@ -114,7 +115,7 @@ const HeroTray = () => {
           className="absolute bottom-[36%] right-[25%] w-[7%]"
           style={{ rotate: "25deg" }}
         >
-          <img src={seashellImg} alt="Seashell" className="w-full h-auto object-contain drop-shadow-md" />
+          <OptimizedImage src={seashellImg} alt="Seashell" className="w-full h-auto object-contain drop-shadow-md" />
         </motion.div>
 
         {/* Butterfly Stamp */}
@@ -122,7 +123,7 @@ const HeroTray = () => {
           className="absolute bottom-[20%] right-[22%] w-[10%]"
           style={{ rotate: "-6deg" }}
         >
-          <img src={ticketImg} alt="Stamp" className="w-full h-auto object-contain drop-shadow-md" />
+          <OptimizedImage src={ticketImg} alt="Stamp" className="w-full h-auto object-contain drop-shadow-md" />
         </motion.div>
       </motion.div>
     </section>

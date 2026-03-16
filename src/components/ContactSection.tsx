@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { OptimizedImage } from "./ui/OptimizedImage";
 import passportPhoto from "@/assets/carmen_caballero.jpg";
 
 const ContactSection = () => {
@@ -132,7 +133,7 @@ const ContactSection = () => {
             <div className="flex flex-col sm:flex-row gap-5 p-6 sm:p-7">
               {/* Photo */}
               <div className="w-full sm:w-28 h-32 bg-muted/30 border border-muted-foreground/20 rounded-sm flex items-center justify-center flex-shrink-0">
-                <img src={passportPhoto} alt="Passport photo" className="w-full h-full object-cover" />
+                <OptimizedImage src={passportPhoto} alt="Passport photo" className="w-full h-full object-cover" loading="eager" />
               </div>
 
               {/* Info */}
