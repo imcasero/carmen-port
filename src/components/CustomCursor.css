@@ -1,0 +1,71 @@
+.custom-cursor {
+  position: fixed;
+  width: 48px;
+  height: 48px;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease-out;
+}
+
+.trail-svg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9997;
+}
+
+.trail-svg path {
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.8));
+  animation: fadeOut 1s ease-out forwards;
+  stroke-dasharray: 5, 5;
+}
+
+.trail-dot {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  pointer-events: none;
+  z-index: 9998;
+  background-color: white;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+  animation: fadeOut 1s ease-out forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 0.8;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.custom-cursor.hidden {
+  opacity: 0;
+}
+
+.custom-cursor.visible {
+  opacity: 1;
+}
+
+.custom-cursor img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Hide default cursor */
+body {
+  cursor: none !important;
+}
+
+/* Ensure all elements have no default cursor */
+* {
+  cursor: none !important;
+}
