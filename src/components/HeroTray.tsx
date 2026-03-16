@@ -6,12 +6,11 @@ import kindleImg from "../assets/kindle.png";
 import sunglassesImg from "../assets/sunglasses.png";
 import airpodsImg from "../assets/airpods.png";
 import macbookImg from "../assets/macbook-alt.png";
-import scrapbookImg from "../assets/polaroid.png";
 import flowerImg from "../assets/flower.png";
-import seashellImg from "../assets/seashell.png";
+import matchaImg from "../assets/matcha.png";
 import stickerImg from "../assets/stamp.png";
 import ticketImg from "../assets/stamp-1.png";
-import trayImg from "../assets/tray.png";
+import mapImg from "../assets/map.png";
 import background from "../assets/background.jpg";
 
 const HeroTray = () => {
@@ -57,39 +56,33 @@ const HeroTray = () => {
 
         {/* Camera - top left */}
         <motion.div
-          className="absolute top-[20%] left-[5%] w-[12%]"
+          className="absolute top-[20%] left-[5%] w-[10%]"
           style={{ rotate: "-15deg" }}
         >
           <OptimizedImage src={cameraImg} alt="Camera" className="w-full h-auto object-contain drop-shadow-lg" loading="eager" />
         </motion.div>
 
-        {/* Polaroid - top center */}
-        <motion.div
-          className="absolute top-[15%] left-[48%] w-[6%]"
-          style={{ rotate: "8deg" }}
-        >
-          <OptimizedImage src={scrapbookImg} alt="Polaroid" className="w-full h-auto object-contain drop-shadow-md" loading="eager" />
-        </motion.div>
+
 
         {/* Kindle - top right area */}
         <motion.div
-          className="absolute top-[22%] right-[5%] w-[10%]"
-          style={{ rotate: "-2deg" }}
+          className="absolute top-[15%] right-[5%] w-[11%]"
+          style={{ rotate: "-25deg" }}
         >
           <OptimizedImage src={kindleImg} alt="Kindle" className="w-full h-auto object-contain drop-shadow-lg" loading="eager" />
         </motion.div>
 
         {/* Flower - scattered upper left */}
         <motion.div
-          className="absolute top-[40%] left-[25%] w-[4%]"
-          style={{ rotate: "-10deg" }}
+           className="absolute bottom-[18%] left-[38%] w-[15%]"
+          style={{ rotate: "-8deg" }}
         >
           <OptimizedImage src={flowerImg} alt="Flower" className="w-full h-auto object-contain drop-shadow-md" />
         </motion.div>
 
         {/* Sunglasses - left middle */}
         <motion.div
-          className="absolute top-[60%] left-[15%] w-[12%] -translate-y-1/2"
+          className="absolute top-[15%] left-[25%] w-[18%] -translate-y-1/2"
           style={{ rotate: "12deg" }}
         >
           <OptimizedImage src={sunglassesImg} alt="Sunglasses" className="w-full h-auto object-contain drop-shadow-lg" />
@@ -97,42 +90,51 @@ const HeroTray = () => {
 
         {/* Airpods - right middle */}
         <motion.div
-          className="absolute top-[55%] right-[8%] w-[10%] -translate-y-1/2"
-          style={{ rotate: "15deg" }}
+            className="absolute top-[7%] left-[52%] w-[10%]"
+          style={{ rotate: "8deg" }}
         >
           <OptimizedImage src={airpodsImg} alt="Airpods" className="w-full h-auto object-contain drop-shadow-sm" />
         </motion.div>
 
         {/* Macbook - bottom left */}
         <motion.div
-          className="absolute bottom-[15%] left-[3%] w-[25%]"
-          style={{ rotate: "0deg" }}
+          className="absolute bottom-[3%] left-[-3%] w-[30%] z-10"
+          style={{ rotate: "6deg" }}
         >
           <OptimizedImage src={macbookImg} alt="Macbook" className="w-full h-auto object-contain drop-shadow-lg" />
         </motion.div>
 
         {/* Sticker - bottom center */}
         <motion.div
-          className="absolute bottom-[18%] left-[48%] w-[5%]"
-          style={{ rotate: "-8deg" }}
+       
+          className="absolute top-[40%] left-[25%] w-[4%]"
+          style={{ rotate: "-10deg" }}
         >
           <OptimizedImage src={stickerImg} alt="Sticker" className="w-full h-auto object-contain drop-shadow-sm" />
         </motion.div>
 
         {/* Seashell - bottom center-right */}
         <motion.div
-          className="absolute bottom-[35%] right-[18%] w-[6%]"
+          className="absolute bottom-[48%] right-[28%] w-[15%]"
           style={{ rotate: "25deg" }}
         >
-          <OptimizedImage src={seashellImg} alt="Seashell" className="w-full h-auto object-contain drop-shadow-md" />
+          <OptimizedImage src={matchaImg} alt="Matcha" className="w-full h-auto object-contain drop-shadow-md" />
         </motion.div>
 
         {/* Butterfly Stamp */}
         <motion.div
-          className="absolute bottom-[12%] right-[12%] w-[8%]"
+          className="absolute bottom-[12%] right-[8%] w-[6%]"
           style={{ rotate: "-6deg" }}
         >
           <OptimizedImage src={ticketImg} alt="Stamp" className="w-full h-auto object-contain drop-shadow-md" />
+        </motion.div>
+        
+        {/* Map */}
+        <motion.div
+          className="absolute bottom-[2%] right-[23%] w-[14%]"
+          style={{ rotate: "25deg" }}
+        >
+          <OptimizedImage src={mapImg} alt="Map" className="w-full h-auto object-contain drop-shadow-md" />
         </motion.div>
       </motion.div>
     </section>
