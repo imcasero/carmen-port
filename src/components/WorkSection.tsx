@@ -40,7 +40,7 @@ const WorkSection = () => {
                 {t("work.experience")}
               </h3>
               <div className="space-y-4">
-                <div className="border-l-2 border-accent pl-4">
+                <div className="border-l-2 border-[#e4f101] pl-4">
                   <p className="font-body text-base md:text-lg text-foreground">{t("work.roles.ioGenix")}</p>
                   <p className="font-mono text-sm text-muted-foreground mt-1">{t("work.dates.ioGenix")}</p>
                 </div>

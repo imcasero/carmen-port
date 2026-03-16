@@ -175,7 +175,7 @@ const ContactSection = () => {
               {/* Stamps */}
               <div className="flex gap-5 mt-5 justify-end flex-wrap">
                 <div className="stamp rotate-[-12deg]">
-                  {t("contact.passport.stampToledo")}
+                  {t("contact.passport.stampMadrid")}
                 </div>
                 <div className="stamp rotate-[8deg] border-muted-foreground/40 text-muted-foreground/60">
                   
