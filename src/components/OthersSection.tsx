@@ -109,22 +109,24 @@ const OthersSection = () => {
   const { t } = useTranslation();
 
   return (
-    <section id="others" className="min-h-screen py-24 px-6 md:px-16">
-      <div className="max-w-7xl mx-auto">
+    <section id="others" className="min-h-screen relative py-24 px-6 md:px-12 lg:px-16">
+      <div className="max-w-[1600px] mx-auto">
+        {/* Title - left aligned */}
         <motion.div
-          initial={{ opacity: 0, x: -30 }}
+          initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.7 }}
+          className="lg:w-[32%] xl:w-[30%] relative z-10 flex-shrink-0 mb-16 lg:mb-0"
         >
-          <h2 className="section-title text-foreground mb-2">{t("others.title")}</h2>
-          <p className="font-mono text-xs tracking-widest uppercase text-muted-foreground mb-16">
+          <h2 className="font-display text-4xl md:text-5xl xl:text-6xl font-black italic text-foreground mb-2">{t("others.title")}</h2>
+          <p className="font-mono text-xs tracking-widest uppercase text-muted-foreground">
             {t("others.subtitle")}
           </p>
         </motion.div>
 
-        {/* Desktop scattered polaroids with flip */}
-        <div className="relative h-[1050px] hidden md:block">
+        {/* Desktop scattered polaroids with flip - centered */}
+        <div className="relative h-[1050px] hidden md:block mx-auto max-w-[1200px]">
           {otherItems.map((item, i) => (
             <FlipCard key={item.id} item={item} index={i} />
           ))}
@@ -150,7 +152,7 @@ const OthersSection = () => {
         </div>
 
         {/* Mobile grid */}
-        <div className="grid grid-cols-2 gap-5 md:hidden">
+        <div className="grid grid-cols-2 gap-5 md:hidden lg:hidden mt-8">
           {otherItems.map((item, i) => (
             <motion.div
               key={item.id}
