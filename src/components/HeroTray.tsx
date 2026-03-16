@@ -12,6 +12,7 @@ import seashellImg from "../assets/seashell.png";
 import stickerImg from "../assets/stamp.png";
 import ticketImg from "../assets/stamp-1.png";
 import trayImg from "../assets/tray.png";
+import background from "../assets/background.jpg";
 
 const HeroTray = () => {
   const { t } = useTranslation();
@@ -19,28 +20,36 @@ const HeroTray = () => {
   return (
     <section 
       id="home" 
-      className="h-[100svh] w-full flex items-center justify-center px-4 md:px-8 bg-[#1a1a1a] overflow-hidden"
+      className="h-[100svh] w-full flex items-center justify-center px-4 md:px-8 overflow-hidden relative"
     >
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage: `url(${background})`,
+          backgroundSize: '100% auto',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          filter: 'blur(1px)',
+          opacity: '0.1'
+        }}
+      ></div>
       <motion.div
         initial={{ opacity: 0, scale: 0.96 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="relative mx-auto bg-center bg-no-repeat"
+        className="relative mx-auto"
         style={{ 
           width: "100%",
-          maxWidth: "min(100%, 85svh, 1200px)",
-          aspectRatio: "1 / 1",
-          backgroundImage: `url(${trayImg})`, 
-          backgroundSize: "contain" 
+          height: "100svh"
         }}
       >
         {/* Magazine cutout name - center */}
         <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-          <div className="flex flex-col items-center gap-1">
-            <span className="magazine-cut text-[2.8rem] min-[480px]:text-6xl md:text-7xl lg:text-9xl tracking-tight rotate-[-2deg]">
+          <div className="flex flex-col items-center gap-3">
+            <span className="magazine-cut text-[3rem] min-[480px]:text-6xl md:text-7xl lg:text-9xl tracking-tight rotate-[-2deg]">
               CARMEN
             </span>
-            <span className="magazine-cut text-xs min-[480px]:text-sm md:text-base lg:text-xl mt-2 rotate-[2deg]">
+            <span className="magazine-cut text-xs min-[480px]:text-sm md:text-base lg:text-6xl mt-2 rotate-[2deg]">
               {t("hero.role")}
             </span>
           </div>
@@ -48,7 +57,7 @@ const HeroTray = () => {
 
         {/* Camera - top left */}
         <motion.div
-          className="absolute top-[25%] left-[13%] w-[16%]"
+          className="absolute top-[20%] left-[5%] w-[12%]"
           style={{ rotate: "-15deg" }}
         >
           <OptimizedImage src={cameraImg} alt="Camera" className="w-full h-auto object-contain drop-shadow-lg" loading="eager" />
@@ -56,7 +65,7 @@ const HeroTray = () => {
 
         {/* Polaroid - top center */}
         <motion.div
-          className="absolute top-[24%] left-[45%] w-[8%]"
+          className="absolute top-[15%] left-[48%] w-[6%]"
           style={{ rotate: "8deg" }}
         >
           <OptimizedImage src={scrapbookImg} alt="Polaroid" className="w-full h-auto object-contain drop-shadow-md" loading="eager" />
@@ -64,7 +73,7 @@ const HeroTray = () => {
 
         {/* Kindle - top right area */}
         <motion.div
-          className="absolute top-[23%] right-[13%] w-[13%]"
+          className="absolute top-[22%] right-[5%] w-[10%]"
           style={{ rotate: "-2deg" }}
         >
           <OptimizedImage src={kindleImg} alt="Kindle" className="w-full h-auto object-contain drop-shadow-lg" loading="eager" />
@@ -72,7 +81,7 @@ const HeroTray = () => {
 
         {/* Flower - scattered upper left */}
         <motion.div
-          className="absolute top-[35%] left-[34%] w-[6%]"
+          className="absolute top-[40%] left-[25%] w-[4%]"
           style={{ rotate: "-10deg" }}
         >
           <OptimizedImage src={flowerImg} alt="Flower" className="w-full h-auto object-contain drop-shadow-md" />
@@ -80,7 +89,7 @@ const HeroTray = () => {
 
         {/* Sunglasses - left middle */}
         <motion.div
-          className="absolute top-[65%] left-[45%] w-[14%] -translate-y-1/2"
+          className="absolute top-[60%] left-[15%] w-[12%] -translate-y-1/2"
           style={{ rotate: "12deg" }}
         >
           <OptimizedImage src={sunglassesImg} alt="Sunglasses" className="w-full h-auto object-contain drop-shadow-lg" />
@@ -88,7 +97,7 @@ const HeroTray = () => {
 
         {/* Airpods - right middle */}
         <motion.div
-          className="absolute top-[52%] right-[10%] w-[13%] -translate-y-1/2"
+          className="absolute top-[55%] right-[8%] w-[10%] -translate-y-1/2"
           style={{ rotate: "15deg" }}
         >
           <OptimizedImage src={airpodsImg} alt="Airpods" className="w-full h-auto object-contain drop-shadow-sm" />
@@ -96,7 +105,7 @@ const HeroTray = () => {
 
         {/* Macbook - bottom left */}
         <motion.div
-          className="absolute bottom-[20%] left-[13%] w-[28%]"
+          className="absolute bottom-[15%] left-[3%] w-[25%]"
           style={{ rotate: "0deg" }}
         >
           <OptimizedImage src={macbookImg} alt="Macbook" className="w-full h-auto object-contain drop-shadow-lg" />
@@ -104,7 +113,7 @@ const HeroTray = () => {
 
         {/* Sticker - bottom center */}
         <motion.div
-          className="absolute bottom-[21%] left-[52%] w-[6%]"
+          className="absolute bottom-[18%] left-[48%] w-[5%]"
           style={{ rotate: "-8deg" }}
         >
           <OptimizedImage src={stickerImg} alt="Sticker" className="w-full h-auto object-contain drop-shadow-sm" />
@@ -112,7 +121,7 @@ const HeroTray = () => {
 
         {/* Seashell - bottom center-right */}
         <motion.div
-          className="absolute bottom-[36%] right-[25%] w-[7%]"
+          className="absolute bottom-[35%] right-[18%] w-[6%]"
           style={{ rotate: "25deg" }}
         >
           <OptimizedImage src={seashellImg} alt="Seashell" className="w-full h-auto object-contain drop-shadow-md" />
@@ -120,7 +129,7 @@ const HeroTray = () => {
 
         {/* Butterfly Stamp */}
         <motion.div
-          className="absolute bottom-[20%] right-[22%] w-[10%]"
+          className="absolute bottom-[12%] right-[12%] w-[8%]"
           style={{ rotate: "-6deg" }}
         >
           <OptimizedImage src={ticketImg} alt="Stamp" className="w-full h-auto object-contain drop-shadow-md" />
