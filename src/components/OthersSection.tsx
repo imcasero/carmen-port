@@ -22,15 +22,15 @@ type OtherItem = {
 };
 
 const otherItems: OtherItem[] = [
-  { id: 1, rotate: -5, top: "1%",  left: "5%",  width: 340, aspectRatio: "1080/1080", label: "Ilustración", desc: "Exploración tipográfica y composición de formas geométricas para uso editorial.", img: imgZma },
-  { id: 2, rotate: 6,  top: "0%",  left: "30%", width: 255, aspectRatio: "1080/1920", label: "Fotografía",  desc: "Capturas del día a día — objetos, texturas y luz natural. Toledo, Madrid, Barcelona.", img: imgLavender },
+  { id: 1, rotate: -3, top: "1%",  left: "5%",  width: 340, aspectRatio: "1080/1080", label: "Ilustración", desc: "Exploración tipográfica y composición de formas geométricas para uso editorial.", img: imgZma },
+  { id: 2, rotate: 3,  top: "0%",  left: "30%", width: 255, aspectRatio: "1080/1920", label: "Fotografía",  desc: "Capturas del día a día — objetos, texturas y luz natural. Toledo, Madrid, Barcelona.", img: imgLavender },
   { id: 3, rotate: -3, top: "4%",  left: "63%", width: 310, aspectRatio: "1080/1350", label: "Editorial",   desc: "Diseño de publicación y maquetación. Trabajo con InDesign y grilla tipográfica.", img: imgBbqNewsletter },
-  { id: 4, rotate: 8,  top: "48%", left: "7%",  width: 255, aspectRatio: "1080/1920", label: "Motion",      desc: "Piezas de contenido animado para redes sociales. Edición en CapCut y After Effects.", video: videoBallsSpace },
-  { id: 5, rotate: -5, top: "46%", left: "39%", width: 255, aspectRatio: "816/1456",  label: "Collage",     desc: "Collage analógico y digital. Recortes, capas y texturas combinadas manualmente.", img: imgAquaLaunch },
-  { id: 6, rotate: 4,  top: "49%", left: "69%", width: 320, aspectRatio: "1080/1080", label: "Sketchbook",  desc: "Bocetos y experimentos visuales de proceso creativo. Ideas en crudo.", img: imgSocialGeneric },
+  { id: 4, rotate: 3,  top: "48%", left: "7%",  width: 255, aspectRatio: "1080/1920", label: "Motion",      desc: "Piezas de contenido animado para redes sociales. Edición en CapCut y After Effects.", video: videoBallsSpace },
+  { id: 5, rotate: -3, top: "46%", left: "39%", width: 255, aspectRatio: "816/1456",  label: "Collage",     desc: "Collage analógico y digital. Recortes, capas y texturas combinadas manualmente.", img: imgAquaLaunch },
+  { id: 6, rotate: 3,  top: "49%", left: "69%", width: 320, aspectRatio: "1080/1080", label: "Sketchbook",  desc: "Bocetos y experimentos visuales de proceso creativo. Ideas en crudo.", img: imgSocialGeneric },
 ];
 
-const FlipCard = ({ item, index }: { item: OtherItem; index: number }) => {
+const FlipCard = ({ item, index, hoveredId, setHoveredId }: { item: OtherItem; index: number; hoveredId: number | null; setHoveredId: (id: number | null) => void }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
   return (
@@ -45,8 +45,8 @@ const FlipCard = ({ item, index }: { item: OtherItem; index: number }) => {
         left: item.left,
         perspective: "1000px",
       }}
-      onMouseEnter={() => setIsFlipped(true)}
-      onMouseLeave={() => setIsFlipped(false)}
+      onMouseEnter={() => { setIsFlipped(true); setHoveredId(item.id); }}
+      onMouseLeave={() => { setIsFlipped(false); setHoveredId(null); }}
     >
       <motion.div
         animate={{ rotateY: isFlipped ? 180 : 0 }}
@@ -55,7 +55,7 @@ const FlipCard = ({ item, index }: { item: OtherItem; index: number }) => {
           width: item.width,
           aspectRatio: item.aspectRatio,
           transformStyle: "preserve-3d",
-          rotate: `${item.rotate}deg`,
+          rotate: hoveredId === item.id ? "0deg" : `${item.rotate}deg`,
         }}
         className="relative hover:z-20"
       >
@@ -74,7 +74,7 @@ const FlipCard = ({ item, index }: { item: OtherItem; index: number }) => {
               className="w-full h-full object-cover"
             />
           ) : (
-            <img src={item.img} alt={item.label} className="w-full h-full object-cover" />
+            <img src={item.img} alt={item.label} className="w-full h-full object-cover" loading="lazy" />
           )}
         </div>
 
@@ -101,6 +101,8 @@ const FlipCard = ({ item, index }: { item: OtherItem; index: number }) => {
 };
 
 const OthersSection = () => {
+  const [hoveredId, setHoveredId] = useState<number | null>(null);
+
   return (
     <section id="others" className="min-h-screen py-24 px-6 md:px-16">
       <div className="max-w-7xl mx-auto">
@@ -119,7 +121,7 @@ const OthersSection = () => {
         {/* Desktop scattered polaroids with flip */}
         <div className="relative h-[1050px] hidden md:block">
           {otherItems.map((item, i) => (
-            <FlipCard key={item.id} item={item} index={i} />
+            <FlipCard key={item.id} item={item} index={i} hoveredId={hoveredId} setHoveredId={setHoveredId} />
           ))}
 
           {/* Decorative stamp */}
@@ -158,7 +160,7 @@ const OthersSection = () => {
                 {item.video ? (
                   <video src={item.video} autoPlay loop muted playsInline className="w-full h-full object-cover" />
                 ) : (
-                  <img src={item.img} alt={item.label} className="w-full h-full object-cover" />
+                  <img src={item.img} alt={item.label} className="w-full h-full object-cover" loading="lazy" />
                 )}
               </div>
               <p className="font-body text-[9px] text-center pt-1 pb-1" style={{ color: "hsl(0 0% 40%)" }}>
