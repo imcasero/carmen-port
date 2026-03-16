@@ -2,12 +2,12 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import imgZma from "@/assets/projects/social/social-post-zma.png";
-import imgLavender from "@/assets/projects/stories/story-lavender.png";
-import imgBbqNewsletter from "@/assets/projects/newsletters/newsletter-bbq-chips.png";
+import hamiltonIllustration from "@/assets/projects/illustrations/hamilton_illustration.png";
+import photografy from "@/assets/projects/social/photo.jpg"
 import videoBallsSpace from "@/assets/projects/stories/story-balls-space-animated.mp4";
-import imgAquaLaunch from "@/assets/projects/stories/story-aqua-launch-text.png";
-import imgSocialGeneric from "@/assets/projects/social/social-post-generic.png";
+import posterMilk from "@/assets/projects/posters/poster_milk.png";
+import molkoMilk from "@/assets/projects/branding/brading_molko.jpg";
+import calimaPost from "@/assets/projects/newsletters/calima.jpg";
 
 type OtherItem = {
   id: number;
@@ -23,12 +23,13 @@ type OtherItem = {
 };
 
 const otherItems: OtherItem[] = [
-  { id: 1, rotate: -5, top: "1%", left: "5%", width: 340, aspectRatio: "1080/1080", label: "others.items.illustration.label", desc: "others.items.illustration.desc", img: imgZma },
-  { id: 2, rotate: 6, top: "0%", left: "30%", width: 255, aspectRatio: "1080/1920", label: "others.items.photo.label", desc: "others.items.photo.desc", img: imgLavender },
-  { id: 3, rotate: -3, top: "4%", left: "63%", width: 310, aspectRatio: "1080/1350", label: "others.items.editorial.label", desc: "others.items.editorial.desc", img: imgBbqNewsletter },
-  { id: 4, rotate: 8, top: "48%", left: "7%", width: 255, aspectRatio: "1080/1920", label: "others.items.motion.label", desc: "others.items.motion.desc", video: videoBallsSpace },
-  { id: 5, rotate: -5, top: "46%", left: "39%", width: 255, aspectRatio: "816/1456", label: "others.items.collage.label", desc: "others.items.collage.desc", img: imgAquaLaunch },
-  { id: 6, rotate: 4, top: "49%", left: "69%", width: 320, aspectRatio: "1080/1080", label: "others.items.sketchbook.label", desc: "others.items.sketchbook.desc", img: imgSocialGeneric },
+  { id: 1, rotate: -5, top: "8%", left: "5%", width: 340, aspectRatio: "1080/1300", label: "others.items.illustration.label", desc: "others.items.illustration.desc", img: hamiltonIllustration },
+  { id: 2, rotate: -3, top: "0%", left: "63%", width: 300, aspectRatio: "1080/1920", label: "others.items.photo.label", desc: "others.items.photo.desc", img: photografy },
+  { id: 3, rotate: 9, top: "3%", left: "30%", width: 400, aspectRatio: "1080/1250", label: "others.items.editorial.label", desc: "others.items.editorial.desc", img: calimaPost },
+  { id: 4, rotate: -3, top: "43%", left: "39%", width: 290, aspectRatio: "1080/1920", label: "others.items.motion.label", desc: "others.items.motion.desc", video: videoBallsSpace },
+  { id: 5, rotate: 8, top: "48%", left: "15%", width: 255, aspectRatio: "816/1456", label: "others.items.collage.label", desc: "others.items.collage.desc", img: posterMilk },
+  { id: 6, rotate: 8, top: "53%", left: "65%", width: 380, aspectRatio: "1080/1080", label: "others.items.sketchbook.label", desc: "others.items.sketchbook.desc", img: molkoMilk },
+
 ];
 
 const FlipCard = ({ item, index }: { item: OtherItem; index: number }) => {
