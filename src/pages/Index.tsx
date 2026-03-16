@@ -19,7 +19,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="py-8 text-center">
         <p className="font-mono text-[10px] tracking-widest uppercase text-muted-foreground">
-          {t("footer.designedBy")} <a className="hover:text-white transition-colors" href="https://www.linkedin.com/in/carmencaballeromedina/">Carmen Caballero Medina</a> {t("footer.and")} {t("footer.developedBy")} <a className="hover:text-white transition-colors" href="https://imcasero.dev">@imcasero.dev</a>
+          {t("footer.designedBy")} <a className="hover:text-white transition-colors" href="https://www.linkedin.com/in/carmencaballeromedina/" target="_blank" rel="noopener noreferrer">Carmen Caballero Medina</a> {t("footer.and")} {t("footer.developedBy")} <a className="hover:text-white transition-colors" href="https://imcasero.dev" target="_blank" rel="noopener noreferrer">@imcasero.dev</a>
         </p>
       </footer>
     </div>

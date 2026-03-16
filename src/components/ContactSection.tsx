@@ -48,7 +48,14 @@ const ContactSection = () => {
               <div className="flex justify-between">
                 <div>
                   <p className="font-mono text-[9px] tracking-widest uppercase text-muted-foreground/60">{t("contact.contact")}</p>
-                  <p className="font-body text-sm text-card-foreground">{t("contact.contactValue")}</p>
+                  <a 
+                    href="https://www.linkedin.com/in/carmencaballeromedina/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="font-body text-sm text-card-foreground hover:text-primary transition-colors"
+                  >
+                    {t("contact.contactValue")}
+                  </a>
                 </div>
                 <div className="text-right">
                   <p className="font-mono text-[9px] tracking-widest uppercase text-muted-foreground/60">{t("contact.location")}</p>
@@ -59,7 +66,14 @@ const ContactSection = () => {
               <div className="flex justify-between">
                 <div>
                   <p className="font-mono text-[9px] tracking-widest uppercase text-muted-foreground/60">LinkedIn</p>
-                  <p className="font-body text-sm text-card-foreground">carmencaballeromedina</p>
+                  <a 
+                    href="https://www.linkedin.com/in/carmencaballeromedina/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="font-body text-sm text-card-foreground hover:text-primary transition-colors"
+                  >
+                    carmencaballeromedina
+                  </a>
                 </div>
                 <div className="text-right">
                   <p className="font-mono text-[9px] tracking-widest uppercase text-muted-foreground/60">{t("contact.tools")}</p>
