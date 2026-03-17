@@ -34,34 +34,60 @@ const resources: Resource = {
           freelance: "Sep – Dic 2021",
           maktagg: "Jun – Jul 2021",
         },
+        items: {
+          gymbroBanner: {
+            label: "GymBro · Banner",
+            desc: "Banner publicitario para campaña digital.",
+          },
+          videoChica: {
+            label: "Girl Video · Story",
+            desc: "Video generado con IA para contenido en redes sociales.",
+          },
+          intraworkNewsletter: {
+            label: "Intrawork · Newsletter",
+            desc: "Imagen promocional para newsletter de marca.",
+          },
+          barritasPost: {
+            label: "Barritas · Social",
+            desc: "Post de Instagram para lanzamiento de producto.",
+          },
+          androblastYoutube: {
+            label: "Androblast · YouTube",
+            desc: "Miniatura de YouTube para contenido fitness.",
+          },
+          zmaSuplement: {
+            label: "ZMA · Supplement",
+            desc: "Post promocional para lanzamiento de suplemento.",
+          },
+        },
       },
       others: {
         title: "Otros.",
         subtitle: "Ilustraciones · Fotografía · For fun",
         items: {
           illustration: {
-            label: "Ilustración",
-            desc: "Exploración tipográfica y composición de formas geométricas para uso editorial.",
+            label: "Hamilton · Ilustración",
+            desc: "Ilustración digital por encargo realizada en Procreate.",
           },
           photo: {
-            label: "Fotografía",
-            desc: "Capturas del día a día — objetos, texturas y luz natural. Toledo, Madrid, Barcelona.",
+            label: "Foto Aranjuez · Fotografía",
+            desc: "Fotografía de paisaje urbano.",
           },
           editorial: {
-            label: "Editorial",
-            desc: "Diseño de publicación y maquetación. Trabajo con InDesign y grilla tipográfica.",
+            label: "Vitamina D · Editorial",
+            desc: "Cartel promocional para evento \"tardeo\" del Restaurante Hierbabuena (Toledo).",
           },
           motion: {
-            label: "Motion",
-            desc: "Piezas de contenido animado para redes sociales. Edición en CapCut y After Effects.",
+            label: "Tender Balls Astronauta · Motion",
+            desc: "Video publicitario conceptual para lanzamiento de producto.",
           },
           collage: {
-            label: "Collage",
-            desc: "Collage analógico y digital. Recortes, capas y texturas combinadas manualmente.",
+            label: "Leche Poster · Collage",
+            desc: "Cartel publicitario ficticio explorando distintos estilos visuales.",
           },
           sketchbook: {
-            label: "Sketchbook",
-            desc: "Bocetos y experimentos visuales de proceso creativo. Ideas en crudo.",
+            label: "Molko · Branding",
+            desc: "Proyecto ficticio de branding y packaging para bebida vegetal.",
           },
           stampMadrid: "MADRID",
         },
@@ -132,34 +158,60 @@ const resources: Resource = {
           freelance: "Sep – Dec 2021",
           maktagg: "Jun – Jul 2021",
         },
+        items: {
+          gymbroBanner: {
+            label: "GYMBRO · Banner",
+            desc: "Advertising banner for digital campaign.",
+          },
+          videoChica: {
+            label: "Girl Video · Story",
+            desc: "AI-generated video for social media content.",
+          },
+          intraworkNewsletter: {
+            label: "Intrawork · Newsletter",
+            desc: "Promotional image for brand newsletter.",
+          },
+          barritasPost: {
+            label: "Barritas · Social",
+            desc: "Instagram post for product launch.",
+          },
+          androblastYoutube: {
+            label: "Androblast · YouTube",
+            desc: "YouTube thumbnail for fitness content.",
+          },
+          zmaSuplement: {
+            label: "ZMA · Supplement",
+            desc: "Promotional post for supplement launch.",
+          },
+        },
       },
       others: {
         title: "Others.",
         subtitle: "Illustration · Photography · For fun",
         items: {
           illustration: {
-            label: "Illustration",
-            desc: "Typography exploration and geometric composition for editorial use.",
+            label: "Hamilton · Illustration",
+            desc: "Digital illustration commissioned and created in Procreate.",
           },
           photo: {
-            label: "Photography",
-            desc: "Everyday captures — objects, textures, and natural light. Toledo, Madrid, Barcelona.",
+            label: "Aranjuez Photo · Photography",
+            desc: "Urban landscape photography.",
           },
           editorial: {
-            label: "Editorial",
-            desc: "Publication design and layout. Working with InDesign and typographic grids.",
+            label: "Vitamin D · Editorial",
+            desc: "Promotional poster for \"tardeo\" event at Restaurante Hierbabuena (Toledo).",
           },
           motion: {
-            label: "Motion",
-            desc: "Animated content for social media. Editing in CapCut and After Effects.",
+            label: "Tender Balls Astronaut · Motion",
+            desc: "Conceptual advertising video for product launch.",
           },
           collage: {
-            label: "Collage",
-            desc: "Analog and digital collage. Cutouts, layers, and textures combined by hand.",
+            label: "Milk Poster · Collage",
+            desc: "Fictional advertising poster exploring different visual styles.",
           },
           sketchbook: {
-            label: "Sketchbook",
-            desc: "Sketches and visual experiments from the creative process. Raw ideas.",
+            label: "Molko · Branding",
+            desc: "Fictional branding and packaging project for plant-based beverage.",
           },
           stampMadrid: "MADRID",
         },

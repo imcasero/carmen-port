@@ -10,12 +10,12 @@ import imgNewsletterIntra from "@/assets/projects/newsletters/newsletter-intrawo
 import socialPostZma from "@/assets/projects/social/social-post-zma.png";
 
 const workItems = [
-  { id: 2, rotate: 14, top: "0%", left: "38%", width: "30%", aspectRatio: "1080/1920", label: "Video Essential Kit · Story", video: videoEssentialKit },
-  { id: 1, rotate: 5, top: "5%", left: "5%", width: "45%", aspectRatio: "3002/1100", label: "GymBro Pack · Banner", img: imgBannerGymbro },
-  { id: 3, rotate: -3, top: "75%", left: "35%", width: "30%", aspectRatio: "1920/1080", label: "Androblast · YouTube", img: imgYoutubAndroblast },
-  { id: 4, rotate: 5, top: "45%", left: "8%", width: "30%", aspectRatio: "1080/1080", label: "Barritas · Post Social", img: imgSocialBars },
-  { id: 5, rotate: -8, top: "2%", left: "68%", width: "29%", aspectRatio: "1080/1350", label: "IntraWork · Newsletter", img: imgNewsletterIntra },
-  { id: 6, rotate: 4, top: "50%", left: "70%", width: "35%", aspectRatio: "1080/1080", label: "Aloe Vera · Story", img: socialPostZma },
+  { id: 2, rotate: 14, top: "0%", left: "38%", width: "30%", aspectRatio: "1080/1920", labelKey: "work.items.videoChica.label", descKey: "work.items.videoChica.desc", video: videoEssentialKit },
+  { id: 1, rotate: 5, top: "5%", left: "5%", width: "45%", aspectRatio: "3002/1100", labelKey: "work.items.gymbroBanner.label", descKey: "work.items.gymbroBanner.desc", img: imgBannerGymbro },
+  { id: 3, rotate: -3, top: "75%", left: "35%", width: "30%", aspectRatio: "1920/1080", labelKey: "work.items.androblastYoutube.label", descKey: "work.items.androblastYoutube.desc", img: imgYoutubAndroblast },
+  { id: 4, rotate: 5, top: "45%", left: "8%", width: "30%", aspectRatio: "1080/1080", labelKey: "work.items.barritasPost.label", descKey: "work.items.barritasPost.desc", img: imgSocialBars },
+  { id: 5, rotate: -8, top: "2%", left: "68%", width: "29%", aspectRatio: "1080/1350", labelKey: "work.items.intraworkNewsletter.label", descKey: "work.items.intraworkNewsletter.desc", img: imgNewsletterIntra },
+  { id: 6, rotate: 4, top: "50%", left: "70%", width: "35%", aspectRatio: "1080/1080", labelKey: "work.items.zmaSuplement.label", descKey: "work.items.zmaSuplement.desc", img: socialPostZma },
 ];
 
 const WorkSection = () => {
@@ -112,7 +112,8 @@ const WorkSection = () => {
                 )}
               </div>
               <div className="p-3">
-                <p className="font-mono text-[10px] text-card-foreground/60">{item.label}</p>
+                <p className="font-mono text-[10px] text-card-foreground/60">{t(item.labelKey)}</p>
+                <p className="font-body text-[9px] text-card-foreground/50 mt-1">{t(item.descKey)}</p>
               </div>
             </motion.div>
           ))}
@@ -152,7 +153,8 @@ const WorkSection = () => {
                 )}
               </div>
               <div className="p-3">
-                <p className="font-mono text-[10px] text-card-foreground/60">{item.label}</p>
+                <p className="font-mono text-[10px] text-card-foreground/60">{t(item.labelKey)}</p>
+                <p className="font-body text-[9px] text-card-foreground/50 mt-1">{t(item.descKey)}</p>
               </div>
             </motion.div>
           ))}
