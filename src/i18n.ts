@@ -116,6 +116,8 @@ const resources: Resource = {
           aboutMeTitle: "Sobre mí",
           aboutMe:
             "Diseñadora gráfica con base en Adobe Suite y experiencia en branding, identidad visual y contenido digital. Formada en la Escuela de Arte de Toledo. Actualmente en iO.GENIX, con interés creciente en UX e IA creativa.",
+          downloadCv: "Descargar CV",
+          downloadCvAria: "Descargar el CV de Carmen Caballero Medina en PDF",
         },
       },
       footer: {
@@ -241,6 +243,8 @@ const resources: Resource = {
           aboutMe:
             "Graphic designer with an Adobe Suite background and experience in branding, visual identity, and digital content. Trained at the School of Art in Toledo. Currently at iO.GENIX, with a growing interest in UX and creative AI.",
           stampMadrid: "Madrid",
+          downloadCv: "Download CV",
+          downloadCvAria: "Download Carmen Caballero Medina's CV as PDF",
         },
       },
       footer: {

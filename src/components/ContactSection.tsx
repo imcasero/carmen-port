@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Download } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { OptimizedImage } from "./ui/OptimizedImage";
 import passportPhoto from "@/assets/carmen_caballero.jpg";
@@ -172,13 +173,24 @@ const ContactSection = () => {
                 {t("contact.passport.aboutMe")}
               </p>
 
-              {/* Stamps */}
-              <div className="flex gap-5 mt-5 justify-end flex-wrap">
+              {/* Download CV + stamps */}
+              <div className="flex items-center gap-5 mt-5 justify-between flex-wrap">
+                <motion.a
+                  href="/CARMEN_CABALLERO_MEDINA_CV.pdf"
+                  download="CARMEN_CABALLERO_MEDINA_CV.pdf"
+                  aria-label={t("contact.passport.downloadCvAria")}
+                  onClick={(e) => e.stopPropagation()}
+                  whileHover={{ y: -2 }}
+                  whileTap={{ scale: 0.97 }}
+                  transition={{ duration: 0.2, ease: "easeOut" }}
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-sm border-2 border-dashed border-card-foreground/40 bg-transparent hover:bg-[#e4f101] hover:border-card-foreground/70 font-mono text-[10px] tracking-[0.18em] uppercase font-bold text-card-foreground transition-colors duration-300"
+                >
+                  <Download className="w-3.5 h-3.5" strokeWidth={2.5} />
+                  {t("contact.passport.downloadCv")}
+                </motion.a>
+
                 <div className="stamp rotate-[-12deg]">
                   {t("contact.passport.stampMadrid")}
-                </div>
-                <div className="stamp rotate-[8deg] border-muted-foreground/40 text-muted-foreground/60">
-                  
                 </div>
               </div>
             </div>
