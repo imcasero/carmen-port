@@ -75,7 +75,7 @@ const resources: Resource = {
           },
           editorial: {
             label: "Vitamina D · Editorial",
-            desc: "Cartel promocional para evento \"tardeo\" del Restaurante Hierbabuena (Toledo).",
+            desc: 'Cartel promocional para evento "tardeo" del Restaurante Hierbabuena (Toledo).',
           },
           motion: {
             label: "Tender Balls Astronauta · Motion",
@@ -201,7 +201,7 @@ const resources: Resource = {
           },
           editorial: {
             label: "Vitamin D · Editorial",
-            desc: "Promotional poster for \"tardeo\" event at Restaurante Hierbabuena (Toledo).",
+            desc: 'Promotional poster for "tardeo" event at Restaurante Hierbabuena (Toledo).',
           },
           motion: {
             label: "Tender Balls Astronaut · Motion",

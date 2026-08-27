@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { OptimizedVideo } from "./ui/OptimizedVideo";
 
 import hamiltonIllustration from "@/assets/projects/illustrations/hamilton_illustration.png";
-import photografy from "@/assets/projects/social/photo.jpg"
+import photografy from "@/assets/projects/social/photo.jpg";
 import videoBallsSpace from "@/assets/projects/stories/story-balls-space-animated.mp4";
 import posterMilk from "@/assets/projects/posters/poster_milk.png";
 import molkoMilk from "@/assets/projects/branding/brading_molko.jpg";
@@ -24,13 +24,72 @@ type OtherItem = {
 };
 
 const otherItems: OtherItem[] = [
-  { id: 1, rotate: -5, top: "8%", left: "5%", width: 340, aspectRatio: "1080/1300", label: "others.items.illustration.label", desc: "others.items.illustration.desc", img: hamiltonIllustration },
-  { id: 2, rotate: -3, top: "0%", left: "63%", width: 300, aspectRatio: "1080/1920", label: "others.items.photo.label", desc: "others.items.photo.desc", img: photografy },
-  { id: 3, rotate: 9, top: "3%", left: "30%", width: 400, aspectRatio: "1080/1250", label: "others.items.editorial.label", desc: "others.items.editorial.desc", img: calimaPost },
-  { id: 4, rotate: -3, top: "43%", left: "39%", width: 290, aspectRatio: "1080/1920", label: "others.items.motion.label", desc: "others.items.motion.desc", video: videoBallsSpace },
-  { id: 5, rotate: 8, top: "48%", left: "15%", width: 255, aspectRatio: "816/1456", label: "others.items.collage.label", desc: "others.items.collage.desc", img: posterMilk },
-  { id: 6, rotate: 8, top: "53%", left: "65%", width: 380, aspectRatio: "1080/1080", label: "others.items.sketchbook.label", desc: "others.items.sketchbook.desc", img: molkoMilk },
-
+  {
+    id: 1,
+    rotate: -5,
+    top: "8%",
+    left: "5%",
+    width: 340,
+    aspectRatio: "1080/1300",
+    label: "others.items.illustration.label",
+    desc: "others.items.illustration.desc",
+    img: hamiltonIllustration,
+  },
+  {
+    id: 2,
+    rotate: -3,
+    top: "0%",
+    left: "63%",
+    width: 300,
+    aspectRatio: "1080/1920",
+    label: "others.items.photo.label",
+    desc: "others.items.photo.desc",
+    img: photografy,
+  },
+  {
+    id: 3,
+    rotate: 9,
+    top: "3%",
+    left: "30%",
+    width: 400,
+    aspectRatio: "1080/1250",
+    label: "others.items.editorial.label",
+    desc: "others.items.editorial.desc",
+    img: calimaPost,
+  },
+  {
+    id: 4,
+    rotate: -3,
+    top: "43%",
+    left: "39%",
+    width: 290,
+    aspectRatio: "1080/1920",
+    label: "others.items.motion.label",
+    desc: "others.items.motion.desc",
+    video: videoBallsSpace,
+  },
+  {
+    id: 5,
+    rotate: 8,
+    top: "48%",
+    left: "15%",
+    width: 255,
+    aspectRatio: "816/1456",
+    label: "others.items.collage.label",
+    desc: "others.items.collage.desc",
+    img: posterMilk,
+  },
+  {
+    id: 6,
+    rotate: 8,
+    top: "53%",
+    left: "65%",
+    width: 380,
+    aspectRatio: "1080/1080",
+    label: "others.items.sketchbook.label",
+    desc: "others.items.sketchbook.desc",
+    img: molkoMilk,
+  },
 ];
 
 const FlipCard = ({ item, index }: { item: OtherItem; index: number }) => {
@@ -79,7 +138,13 @@ const FlipCard = ({ item, index }: { item: OtherItem; index: number }) => {
               className="w-full h-full object-cover"
             />
           ) : (
-            <img src={item.img} alt={t(item.label)} className="w-full h-full object-cover" loading="lazy" decoding="async" />
+            <img
+              src={item.img}
+              alt={t(item.label)}
+              className="w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
+            />
           )}
         </div>
 
@@ -93,10 +158,16 @@ const FlipCard = ({ item, index }: { item: OtherItem; index: number }) => {
             boxShadow: "3px 3px 12px rgba(0,0,0,0.35)",
           }}
         >
-          <p className="font-display text-lg font-bold text-center mb-4" style={{ color: "hsl(0 0% 15%)" }}>
+          <p
+            className="font-display text-lg font-bold text-center mb-4"
+            style={{ color: "hsl(0 0% 15%)" }}
+          >
             {t(item.label)}
           </p>
-          <p className="font-body text-sm leading-relaxed text-center" style={{ color: "hsl(0 0% 30%)" }}>
+          <p
+            className="font-body text-sm leading-relaxed text-center"
+            style={{ color: "hsl(0 0% 30%)" }}
+          >
             {t(item.desc)}
           </p>
         </div>
@@ -119,7 +190,9 @@ const OthersSection = () => {
           transition={{ duration: 0.7 }}
           className="lg:w-[32%] xl:w-[30%] relative z-10 flex-shrink-0 mb-16 lg:mb-0"
         >
-          <h2 className="font-display text-4xl md:text-5xl xl:text-6xl font-black italic text-foreground mb-2">{t("others.title")}</h2>
+          <h2 className="font-display text-4xl md:text-5xl xl:text-6xl font-black italic text-foreground mb-2">
+            {t("others.title")}
+          </h2>
           <p className="font-mono text-xs tracking-widest uppercase text-muted-foreground">
             {t("others.subtitle")}
           </p>
@@ -165,12 +238,29 @@ const OthersSection = () => {
             >
               <div className="w-full aspect-[3/4] overflow-hidden">
                 {item.video ? (
-                  <OptimizedVideo src={item.video} autoPlay loop muted playsInline preload="metadata" className="w-full h-full object-cover" />
+                  <OptimizedVideo
+                    src={item.video}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="metadata"
+                    className="w-full h-full object-cover"
+                  />
                 ) : (
-                  <img src={item.img} alt={t(item.label)} className="w-full h-full object-cover" loading="lazy" decoding="async" />
+                  <img
+                    src={item.img}
+                    alt={t(item.label)}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
                 )}
               </div>
-              <p className="font-body text-[9px] text-center pt-1 pb-1" style={{ color: "hsl(0 0% 40%)" }}>
+              <p
+                className="font-body text-[9px] text-center pt-1 pb-1"
+                style={{ color: "hsl(0 0% 40%)" }}
+              >
                 {t(item.desc)}
               </p>
             </motion.div>

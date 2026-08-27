@@ -16,22 +16,22 @@ const Navigation = () => {
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault();
-    
+
     const element = document.getElementById(targetId);
     if (element) {
       const offset = 80; // Offset for fixed header
       const elementPosition = element.offsetTop - offset;
-      
+
       animateScroll.scrollTo(elementPosition, {
         duration: 800,
-        smooth: "easeInOutQuart"
+        smooth: "easeInOutQuart",
       });
     }
   };
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = navItems.map(item => item.href.slice(1));
+      const sections = navItems.map((item) => item.href.slice(1));
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -63,17 +63,15 @@ const Navigation = () => {
         {navItems.map((item) => {
           const sectionId = item.href.slice(1);
           const isActive = activeSection === sectionId;
-          
+
           return (
-            <a 
-              key={item.key} 
-              href={item.href} 
+            <a
+              key={item.key}
+              href={item.href}
               className="nav-link relative py-1"
               onClick={(e) => handleNavClick(e, sectionId)}
             >
-              <span className="transition-colors duration-300">
-                {t(item.key)}
-              </span>
+              <span className="transition-colors duration-300">{t(item.key)}</span>
               {isActive && (
                 <motion.div
                   layoutId="activeTab"

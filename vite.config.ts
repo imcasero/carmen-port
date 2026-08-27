@@ -21,11 +21,11 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: ['react', 'react-dom'],
-          ui: ['@radix-ui/react-avatar', '@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu'],
-          motion: ['framer-motion'],
-          router: ['react-router-dom'],
-          query: ['@tanstack/react-query'],
+          vendor: ["react", "react-dom"],
+          ui: ["@radix-ui/react-avatar", "@radix-ui/react-dialog", "@radix-ui/react-dropdown-menu"],
+          motion: ["framer-motion"],
+          router: ["react-router-dom"],
+          query: ["@tanstack/react-query"],
         },
       },
     },

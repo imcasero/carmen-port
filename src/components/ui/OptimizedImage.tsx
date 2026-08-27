@@ -31,7 +31,7 @@ export const OptimizedImage = ({
           }
         });
       },
-      { rootMargin: "50px" }
+      { rootMargin: "50px" },
     );
 
     if (imgRef.current) {
@@ -44,7 +44,10 @@ export const OptimizedImage = ({
   return (
     <img
       ref={imgRef}
-      src={imageSrc || "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"}
+      src={
+        imageSrc ||
+        "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
+      }
       alt={alt}
       className={`${className} ${isLoaded ? "" : "opacity-0"} transition-opacity duration-300`}
       style={style}
