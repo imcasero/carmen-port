@@ -10,12 +10,72 @@ import imgNewsletterIntra from "@/assets/projects/newsletters/newsletter-intrawo
 import socialPostZma from "@/assets/projects/social/social-post-zma.png";
 
 const workItems = [
-  { id: 2, rotate: 14, top: "0%", left: "38%", width: "30%", aspectRatio: "1080/1920", labelKey: "work.items.videoChica.label", descKey: "work.items.videoChica.desc", video: videoEssentialKit },
-  { id: 1, rotate: 5, top: "5%", left: "5%", width: "45%", aspectRatio: "3002/1100", labelKey: "work.items.gymbroBanner.label", descKey: "work.items.gymbroBanner.desc", img: imgBannerGymbro },
-  { id: 3, rotate: -3, top: "75%", left: "35%", width: "30%", aspectRatio: "1920/1080", labelKey: "work.items.androblastYoutube.label", descKey: "work.items.androblastYoutube.desc", img: imgYoutubAndroblast },
-  { id: 4, rotate: 5, top: "45%", left: "8%", width: "30%", aspectRatio: "1080/1080", labelKey: "work.items.barritasPost.label", descKey: "work.items.barritasPost.desc", img: imgSocialBars },
-  { id: 5, rotate: -8, top: "2%", left: "68%", width: "29%", aspectRatio: "1080/1350", labelKey: "work.items.intraworkNewsletter.label", descKey: "work.items.intraworkNewsletter.desc", img: imgNewsletterIntra },
-  { id: 6, rotate: 4, top: "50%", left: "70%", width: "35%", aspectRatio: "1080/1080", labelKey: "work.items.zmaSuplement.label", descKey: "work.items.zmaSuplement.desc", img: socialPostZma },
+  {
+    id: 2,
+    rotate: 14,
+    top: "0%",
+    left: "38%",
+    width: "30%",
+    aspectRatio: "1080/1920",
+    labelKey: "work.items.videoChica.label",
+    descKey: "work.items.videoChica.desc",
+    video: videoEssentialKit,
+  },
+  {
+    id: 1,
+    rotate: 5,
+    top: "5%",
+    left: "5%",
+    width: "45%",
+    aspectRatio: "3002/1100",
+    labelKey: "work.items.gymbroBanner.label",
+    descKey: "work.items.gymbroBanner.desc",
+    img: imgBannerGymbro,
+  },
+  {
+    id: 3,
+    rotate: -3,
+    top: "75%",
+    left: "35%",
+    width: "30%",
+    aspectRatio: "1920/1080",
+    labelKey: "work.items.androblastYoutube.label",
+    descKey: "work.items.androblastYoutube.desc",
+    img: imgYoutubAndroblast,
+  },
+  {
+    id: 4,
+    rotate: 5,
+    top: "45%",
+    left: "8%",
+    width: "30%",
+    aspectRatio: "1080/1080",
+    labelKey: "work.items.barritasPost.label",
+    descKey: "work.items.barritasPost.desc",
+    img: imgSocialBars,
+  },
+  {
+    id: 5,
+    rotate: -8,
+    top: "2%",
+    left: "68%",
+    width: "29%",
+    aspectRatio: "1080/1350",
+    labelKey: "work.items.intraworkNewsletter.label",
+    descKey: "work.items.intraworkNewsletter.desc",
+    img: imgNewsletterIntra,
+  },
+  {
+    id: 6,
+    rotate: 4,
+    top: "50%",
+    left: "70%",
+    width: "35%",
+    aspectRatio: "1080/1080",
+    labelKey: "work.items.zmaSuplement.label",
+    descKey: "work.items.zmaSuplement.desc",
+    img: socialPostZma,
+  },
 ];
 
 const WorkSection = () => {
@@ -32,7 +92,9 @@ const WorkSection = () => {
           transition={{ duration: 0.7 }}
           className="lg:w-[32%] xl:w-[30%] relative z-10 flex-shrink-0 flex flex-col justify-center"
         >
-          <h2 className="font-display text-4xl md:text-5xl xl:text-6xl font-black italic text-foreground mb-10">{t("work.title")}</h2>
+          <h2 className="font-display text-4xl md:text-5xl xl:text-6xl font-black italic text-foreground mb-10">
+            {t("work.title")}
+          </h2>
 
           <div className="space-y-8">
             <div>
@@ -41,20 +103,36 @@ const WorkSection = () => {
               </h3>
               <div className="space-y-4">
                 <div className="border-l-2 border-[#e4f101] pl-4">
-                  <p className="font-body text-base md:text-lg text-foreground">{t("work.roles.ioGenix")}</p>
-                  <p className="font-mono text-sm text-muted-foreground mt-1">{t("work.dates.ioGenix")}</p>
+                  <p className="font-body text-base md:text-lg text-foreground">
+                    {t("work.roles.ioGenix")}
+                  </p>
+                  <p className="font-mono text-sm text-muted-foreground mt-1">
+                    {t("work.dates.ioGenix")}
+                  </p>
                 </div>
                 <div className="border-l-2 border-muted pl-4">
-                  <p className="font-body text-base md:text-lg text-foreground">{t("work.roles.motorOk")}</p>
-                  <p className="font-mono text-sm text-muted-foreground mt-1">{t("work.dates.motorOk")}</p>
+                  <p className="font-body text-base md:text-lg text-foreground">
+                    {t("work.roles.motorOk")}
+                  </p>
+                  <p className="font-mono text-sm text-muted-foreground mt-1">
+                    {t("work.dates.motorOk")}
+                  </p>
                 </div>
                 <div className="border-l-2 border-muted pl-4">
-                  <p className="font-body text-base md:text-lg text-foreground">{t("work.roles.freelance")}</p>
-                  <p className="font-mono text-sm text-muted-foreground mt-1">{t("work.dates.freelance")}</p>
+                  <p className="font-body text-base md:text-lg text-foreground">
+                    {t("work.roles.freelance")}
+                  </p>
+                  <p className="font-mono text-sm text-muted-foreground mt-1">
+                    {t("work.dates.freelance")}
+                  </p>
                 </div>
                 <div className="border-l-2 border-muted pl-4">
-                  <p className="font-body text-base md:text-lg text-foreground">{t("work.roles.maktagg")}</p>
-                  <p className="font-mono text-sm text-muted-foreground mt-1">{t("work.dates.maktagg")}</p>
+                  <p className="font-body text-base md:text-lg text-foreground">
+                    {t("work.roles.maktagg")}
+                  </p>
+                  <p className="font-mono text-sm text-muted-foreground mt-1">
+                    {t("work.dates.maktagg")}
+                  </p>
                 </div>
               </div>
             </div>
@@ -79,7 +157,7 @@ const WorkSection = () => {
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.12 }}
-              className={`postcard absolute cursor-pointer hover:z-20 transition-all duration-300 hover:scale-105 hover:shadow-2xl ${item.video ? 'z-10' : ''}`}
+              className={`postcard absolute cursor-pointer hover:z-20 transition-all duration-300 hover:scale-105 hover:shadow-2xl ${item.video ? "z-10" : ""}`}
               style={{
                 rotate: `${item.rotate}deg`,
                 top: item.top,
@@ -87,10 +165,7 @@ const WorkSection = () => {
                 width: item.width,
               }}
             >
-              <div
-                className="w-full overflow-hidden"
-                style={{ aspectRatio: item.aspectRatio }}
-              >
+              <div className="w-full overflow-hidden" style={{ aspectRatio: item.aspectRatio }}>
                 {item.video ? (
                   <OptimizedVideo
                     src={item.video}
@@ -113,7 +188,9 @@ const WorkSection = () => {
               </div>
               <div className="p-3">
                 <p className="font-mono text-[10px] text-card-foreground/60">{t(item.labelKey)}</p>
-                <p className="font-body text-[9px] text-card-foreground/50 mt-1">{t(item.descKey)}</p>
+                <p className="font-body text-[9px] text-card-foreground/50 mt-1">
+                  {t(item.descKey)}
+                </p>
               </div>
             </motion.div>
           ))}
@@ -154,7 +231,9 @@ const WorkSection = () => {
               </div>
               <div className="p-3">
                 <p className="font-mono text-[10px] text-card-foreground/60">{t(item.labelKey)}</p>
-                <p className="font-body text-[9px] text-card-foreground/50 mt-1">{t(item.descKey)}</p>
+                <p className="font-body text-[9px] text-card-foreground/50 mt-1">
+                  {t(item.descKey)}
+                </p>
               </div>
             </motion.div>
           ))}

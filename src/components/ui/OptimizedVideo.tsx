@@ -39,7 +39,7 @@ export const OptimizedVideo = ({
           }
         });
       },
-      { threshold: 0.25 }
+      { threshold: 0.25 },
     );
 
     if (videoRef.current) {

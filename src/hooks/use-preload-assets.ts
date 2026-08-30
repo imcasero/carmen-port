@@ -4,10 +4,7 @@ import { useEffect } from "react";
  * Hook para precargar assets críticos
  * Usa requestIdleCallback para no bloquear el main thread
  */
-export const usePreloadAssets = (
-  assets: string[],
-  priority: "high" | "low" = "low"
-) => {
+export const usePreloadAssets = (assets: string[], priority: "high" | "low" = "low") => {
   useEffect(() => {
     const preload = () => {
       assets.forEach((asset) => {

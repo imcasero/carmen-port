@@ -26,7 +26,7 @@
 
 .trail-dot {
   position: fixed;
-  width:6px;
+  width: 6px;
   height: 6px;
   pointer-events: none;
   z-index: 9998;
