@@ -69,10 +69,6 @@ const resources: Resource = {
             label: "Hamilton · Ilustración",
             desc: "Ilustración digital por encargo realizada en Procreate.",
           },
-          photo: {
-            label: "Foto Aranjuez · Fotografía",
-            desc: "Fotografía de paisaje urbano.",
-          },
           editorial: {
             label: "Vitamina D · Editorial",
             desc: 'Cartel promocional para evento "tardeo" del Restaurante Hierbabuena (Toledo).',
@@ -81,15 +77,29 @@ const resources: Resource = {
             label: "Tender Balls Astronauta · Motion",
             desc: "Video publicitario conceptual para lanzamiento de producto.",
           },
-          collage: {
-            label: "Leche Poster · Collage",
-            desc: "Cartel publicitario ficticio explorando distintos estilos visuales.",
-          },
           sketchbook: {
             label: "Molko · Branding",
             desc: "Proyecto ficticio de branding y packaging para bebida vegetal.",
           },
+          genevaAstro1: {
+            label: "U. Ginebra · Astrofísica",
+            desc: "Serie de ilustraciones por encargo para el Departamento de Astrofísica de la Universidad de Ginebra.",
+          },
+          genevaAstro2: {
+            label: "U. Ginebra · Astrofísica",
+            desc: "Ilustración científica de divulgación para el Departamento de Astrofísica de la Universidad de Ginebra.",
+          },
+          genevaAstro3: {
+            label: "U. Ginebra · Astrofísica",
+            desc: "Ilustración científica de divulgación para el Departamento de Astrofísica de la Universidad de Ginebra.",
+          },
           stampMadrid: "MADRID",
+        },
+        modal: {
+          kicker: "Portfolio · Tarjeta de embarque",
+          project: "Proyecto",
+          details: "Detalles",
+          close: "Cerrar",
         },
       },
       contact: {
@@ -195,10 +205,6 @@ const resources: Resource = {
             label: "Hamilton · Illustration",
             desc: "Digital illustration commissioned and created in Procreate.",
           },
-          photo: {
-            label: "Aranjuez Photo · Photography",
-            desc: "Urban landscape photography.",
-          },
           editorial: {
             label: "Vitamin D · Editorial",
             desc: 'Promotional poster for "tardeo" event at Restaurante Hierbabuena (Toledo).',
@@ -207,15 +213,29 @@ const resources: Resource = {
             label: "Tender Balls Astronaut · Motion",
             desc: "Conceptual advertising video for product launch.",
           },
-          collage: {
-            label: "Milk Poster · Collage",
-            desc: "Fictional advertising poster exploring different visual styles.",
-          },
           sketchbook: {
             label: "Molko · Branding",
             desc: "Fictional branding and packaging project for plant-based beverage.",
           },
+          genevaAstro1: {
+            label: "Geneva Univ. · Astrophysics",
+            desc: "Commissioned illustration series for the Astrophysics Department of the University of Geneva.",
+          },
+          genevaAstro2: {
+            label: "Geneva Univ. · Astrophysics",
+            desc: "Scientific outreach illustration for the Astrophysics Department of the University of Geneva.",
+          },
+          genevaAstro3: {
+            label: "Geneva Univ. · Astrophysics",
+            desc: "Scientific outreach illustration for the Astrophysics Department of the University of Geneva.",
+          },
           stampMadrid: "MADRID",
+        },
+        modal: {
+          kicker: "Portfolio · Boarding Pass",
+          project: "Project",
+          details: "Details",
+          close: "Close",
         },
       },
       contact: {
