@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Download } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { OptimizedImage } from "./ui/OptimizedImage";
-import passportPhoto from "@/assets/carmen_caballero.jpg";
+import passportPhoto from "@/assets/carmen_caballero.jpg?opt";
 
 const ContactSection = () => {
   const { t } = useTranslation();

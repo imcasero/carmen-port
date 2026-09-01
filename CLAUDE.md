@@ -43,6 +43,17 @@ Single-page app with two routes (`/` and `*` for 404). Navigation within the pag
 
 Framer Motion throughout — entrance animations with `whileInView`, 3D flip cards in OthersSection, floating hover effects. Scroll-triggered with viewport detection.
 
+### Images
+
+`vite-imagetools` handles optimization. Import any project image with the `?opt`
+query and it becomes a responsive `{ sources, img }` object (AVIF + WebP, widths
+320/640/960/1280, WebP fallback) — pass it straight to `<OptimizedImage>` with a
+`sizes` matching its CSS-rendered width. Source files can stay full/print-res;
+they're capped at build time. Plain string `src` still works for un-optimized
+cases. Config lives in `vite.config.ts` (`imagetools` plugin), types in
+`src/vite-env.d.ts` / `src/lib/image.ts`. Backgrounds used in CSS `url()` strings
+(e.g. `background.jpg`) stay un-queried.
+
 ### Responsive Layout
 
 Desktop layouts use scattered/rotated positioning (CSS transforms). Mobile layouts stack vertically. WorkSection is the primary example of this divergence.

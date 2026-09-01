@@ -1,14 +1,16 @@
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { OptimizedImage } from "./ui/OptimizedImage";
 import { OptimizedVideo } from "./ui/OptimizedVideo";
+import type { PictureSource } from "@/lib/image";
 
-import hamiltonIllustration from "@/assets/projects/illustrations/hamilton_illustration.png";
-import photografy from "@/assets/projects/social/photo.jpg";
+import hamiltonIllustration from "@/assets/projects/illustrations/hamilton_illustration.png?opt";
+import photografy from "@/assets/projects/social/photo.jpg?opt";
 import videoBallsSpace from "@/assets/projects/stories/story-balls-space-animated.mp4";
-import posterMilk from "@/assets/projects/posters/poster_milk.png";
-import molkoMilk from "@/assets/projects/branding/brading_molko.jpg";
-import calimaPost from "@/assets/projects/newsletters/calima.jpg";
+import posterMilk from "@/assets/projects/posters/poster_milk.png?opt";
+import molkoMilk from "@/assets/projects/branding/brading_molko.jpg?opt";
+import calimaPost from "@/assets/projects/newsletters/calima.jpg?opt";
 
 type OtherItem = {
   id: number;
@@ -19,7 +21,7 @@ type OtherItem = {
   aspectRatio: string;
   label: string;
   desc: string;
-  img?: string;
+  img?: PictureSource | string;
   video?: string;
 };
 
@@ -138,12 +140,11 @@ const FlipCard = ({ item, index }: { item: OtherItem; index: number }) => {
               className="w-full h-full object-cover"
             />
           ) : (
-            <img
+            <OptimizedImage
               src={item.img}
               alt={t(item.label)}
               className="w-full h-full object-cover"
-              loading="lazy"
-              decoding="async"
+              sizes="(max-width: 768px) 45vw, 400px"
             />
           )}
         </div>
@@ -248,12 +249,11 @@ const OthersSection = () => {
                     className="w-full h-full object-cover"
                   />
                 ) : (
-                  <img
+                  <OptimizedImage
                     src={item.img}
                     alt={t(item.label)}
                     className="w-full h-full object-cover"
-                    loading="lazy"
-                    decoding="async"
+                    sizes="(max-width: 768px) 45vw, 400px"
                   />
                 )}
               </div>
