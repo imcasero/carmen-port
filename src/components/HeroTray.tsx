@@ -1,16 +1,16 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { OptimizedImage } from "./ui/OptimizedImage";
-import cameraImg from "../assets/red-camera.png";
-import kindleImg from "../assets/kindle.png";
-import sunglassesImg from "../assets/sunglasses.png";
-import airpodsImg from "../assets/airpods.png";
-import macbookImg from "../assets/macbook-alt.png";
-import flowerImg from "../assets/flower.png";
-import matchaImg from "../assets/matcha.png";
-import stickerImg from "../assets/stamp.png";
-import ticketImg from "../assets/stamp-1.png";
-import mapImg from "../assets/map.png";
+import cameraImg from "../assets/red-camera.png?opt";
+import kindleImg from "../assets/kindle.png?opt";
+import sunglassesImg from "../assets/sunglasses.png?opt";
+import airpodsImg from "../assets/airpods.png?opt";
+import macbookImg from "../assets/macbook-alt.png?opt";
+import flowerImg from "../assets/flower.png?opt";
+import matchaImg from "../assets/matcha.png?opt";
+import stickerImg from "../assets/stamp.png?opt";
+import ticketImg from "../assets/stamp-1.png?opt";
+import mapImg from "../assets/map.png?opt";
 import background from "../assets/background.jpg";
 
 const HeroTray = () => {

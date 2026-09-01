@@ -1,13 +1,14 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { OptimizedImage } from "./ui/OptimizedImage";
 import { OptimizedVideo } from "./ui/OptimizedVideo";
 
-import imgBannerGymbro from "@/assets/projects/banners/banner-gymbro-pack.png";
+import imgBannerGymbro from "@/assets/projects/banners/banner-gymbro-pack.png?opt";
 import videoEssentialKit from "@/assets/projects/stories/essential_kit.mp4";
-import imgYoutubAndroblast from "@/assets/projects/youtube/youtube-thumbnail-androblast.png";
-import imgSocialBars from "@/assets/projects/social/social-post-bars.png";
-import imgNewsletterIntra from "@/assets/projects/newsletters/newsletter-intrawork-promo.png";
-import socialPostZma from "@/assets/projects/social/social-post-zma.png";
+import imgYoutubAndroblast from "@/assets/projects/youtube/youtube-thumbnail-androblast.png?opt";
+import imgSocialBars from "@/assets/projects/social/social-post-bars.png?opt";
+import imgNewsletterIntra from "@/assets/projects/newsletters/newsletter-intrawork-promo.png?opt";
+import socialPostZma from "@/assets/projects/social/social-post-zma.png?opt";
 
 const workItems = [
   {
@@ -177,12 +178,11 @@ const WorkSection = () => {
                     className="w-full h-full object-cover"
                   />
                 ) : (
-                  <img
+                  <OptimizedImage
                     src={item.img}
-                    alt={item.label}
+                    alt={t(item.labelKey)}
                     className="w-full h-full object-cover"
-                    loading="lazy"
-                    decoding="async"
+                    sizes="(max-width: 768px) 90vw, 480px"
                   />
                 )}
               </div>
@@ -220,12 +220,11 @@ const WorkSection = () => {
                     className="w-full h-full object-cover"
                   />
                 ) : (
-                  <img
+                  <OptimizedImage
                     src={item.img}
-                    alt={item.label}
+                    alt={t(item.labelKey)}
                     className="w-full h-full object-cover"
-                    loading="lazy"
-                    decoding="async"
+                    sizes="(max-width: 768px) 90vw, 480px"
                   />
                 )}
               </div>

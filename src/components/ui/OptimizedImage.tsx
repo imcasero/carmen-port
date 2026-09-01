@@ -1,12 +1,19 @@
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
+import type { PictureSource } from "@/lib/image";
 
 interface OptimizedImageProps {
-  src: string;
+  /** A plain URL string, or the object produced by importing an image with `?opt`. */
+  src: PictureSource | string;
   alt: string;
   className?: string;
   style?: React.CSSProperties;
   loading?: "lazy" | "eager";
+  /** Matches the CSS-rendered width so the browser can pick the right srcset entry. */
+  sizes?: string;
 }
+
+const TRANSPARENT_PX =
+  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E";
 
 export const OptimizedImage = ({
   src,
@@ -14,45 +21,32 @@ export const OptimizedImage = ({
   className,
   style,
   loading = "lazy",
+  sizes = "(max-width: 768px) 40vw, 340px",
 }: OptimizedImageProps) => {
-  const [imageSrc, setImageSrc] = useState<string | null>(loading === "eager" ? src : null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const imgRef = useRef<HTMLImageElement>(null);
 
-  useEffect(() => {
-    if (loading === "eager") return;
+  const cls = `${className ?? ""} ${isLoaded ? "" : "opacity-0"} transition-opacity duration-300`;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setImageSrc(src);
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { rootMargin: "50px" },
-    );
+  const imgProps = {
+    alt,
+    className: cls,
+    style,
+    loading,
+    decoding: "async" as const,
+    sizes,
+    onLoad: () => setIsLoaded(true),
+  };
 
-    if (imgRef.current) {
-      observer.observe(imgRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, [src, loading]);
+  if (typeof src === "string") {
+    return <img src={src} {...imgProps} />;
+  }
 
   return (
-    <img
-      ref={imgRef}
-      src={
-        imageSrc ||
-        "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E"
-      }
-      alt={alt}
-      className={`${className} ${isLoaded ? "" : "opacity-0"} transition-opacity duration-300`}
-      style={style}
-      onLoad={() => setIsLoaded(true)}
-      decoding="async"
-    />
+    <picture>
+      {Object.entries(src.sources).map(([format, srcSet]) => (
+        <source key={format} type={`image/${format}`} srcSet={srcSet} sizes={sizes} />
+      ))}
+      <img src={src.img.src || TRANSPARENT_PX} width={src.img.w} height={src.img.h} {...imgProps} />
+    </picture>
   );
 };

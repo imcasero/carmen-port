@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
+import { imagetools } from "vite-imagetools";
 import path from "path";
 
 export default defineConfig({
@@ -10,7 +11,26 @@ export default defineConfig({
       overlay: false,
     },
   },
-  plugins: [react()],
+  plugins: [
+    react(),
+    imagetools({
+      // Import any image with `?opt` to get responsive AVIF + WebP,
+      // capped at 1280px (source files are print-res). WebP is the
+      // fallback: universally supported, keeps alpha, no multi-MB PNGs.
+      defaultDirectives: (url) => {
+        if (url.searchParams.has("opt")) {
+          return new URLSearchParams({
+            format: "avif;webp",
+            w: "320;640;960;1280",
+            quality: "72",
+            withoutEnlargement: "true",
+            as: "picture",
+          });
+        }
+        return new URLSearchParams();
+      },
+    }),
+  ],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
