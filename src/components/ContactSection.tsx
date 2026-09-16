@@ -172,12 +172,13 @@ const ContactSection = () => {
           <div className="passport-inner rounded-sm mx-1 mb-1">
             <div className="flex flex-col sm:flex-row gap-5 p-6 sm:p-7">
               {/* Photo */}
-              <div className="w-full sm:w-28 h-32 bg-muted/30 border border-muted-foreground/20 rounded-sm flex items-center justify-center flex-shrink-0">
+              <div className="relative w-28 h-36 sm:h-32 overflow-hidden bg-muted/30 border border-muted-foreground/20 rounded-sm flex-shrink-0">
                 <OptimizedImage
                   src={passportPhoto}
                   alt="Passport photo"
-                  className="w-full h-full object-cover"
+                  className="absolute inset-0 w-full h-full object-cover object-top"
                   loading="eager"
+                  sizes="112px"
                 />
               </div>
 
